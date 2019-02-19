@@ -50,3 +50,6 @@ git pull
 git commit -m"[descriptive message of the change]"
 git push                                            // pushes everything from your local files to this branch
 ```
+
+## Cheat-sheet pre neveriacich Tomášov
+https://services.github.com/on-demand/downloads/github-git-cheat-sheet/
