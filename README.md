@@ -21,7 +21,7 @@ sudo apt-get install python3
 ```
 git clone git@github.com:adokitkat/IVS_project2.git
 ```
-<b>Over HTTPS:</b>
+<b>Over HTTPS:</b> _recommended_ 
 ```
 git clone https://github.com/adokitkat/IVS_project2.git
 ```
@@ -29,18 +29,23 @@ git clone https://github.com/adokitkat/IVS_project2.git
 <b>!!!</b> Switch to <b>develop</b> branch: <b>!!!</b> 
 ```
 git checkout develop
+```  
+### Working on a new feature
 ```
+git branch feature_[name of feature]    // creates a new branch
+git checkout feature_[name of feature]
+```  
+## From this point do the everytime
 Update working history:
 ```
-git fetch .
+git fetch
 ```
 If changes have been made:
 ```
 git pull
 ```
-### Making changes
+### After making changes in files -> uploading
 ```
-git commit -m"[descriptive message]"
-git push .                               // == git push everyhing in this branch <- git push [remote] [branch]
+git commit -m"[descriptive message of the change]"
+git push                                            // pushes everyhing in this branch
 ```
-
