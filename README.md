@@ -9,6 +9,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor odi
 <b>feature_*</b>  - branche pre nové features, ktoré keď budú dokončené budú pushnuté do develop  
 
 ## Prerequisities
+### Vypni blbý githubovský email check
+![](email.gif)
+
 ### Linux (Debian-based, e.g. Ubuntu)  
 ```
 sudo apt-get install python3
