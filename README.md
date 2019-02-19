@@ -14,7 +14,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor odi
 sudo apt-get install python3
 ```
 ### Windows  
-[Download Python3](https://www.python.org/downloads/)
+[Download Python3](https://www.python.org/downloads/)  
 ## Basics
 ### Getting repository
 <b>Over SSH:</b>
@@ -34,8 +34,9 @@ git checkout develop
 ```
 git branch feature_[name of feature]    // creates a new branch
 git checkout feature_[name of feature]
-```  
-## From this point do the everytime
+```
+ 
+## From this point do everytime
 Update working history:
 ```
 git fetch
