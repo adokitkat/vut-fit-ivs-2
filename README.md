@@ -47,5 +47,5 @@ git pull
 ### After making changes in files -> uploading
 ```
 git commit -m"[descriptive message of the change]"
-git push                                            // pushes everyhing in this branch
+git push                                            // pushes everything from your local files to this branch
 ```
