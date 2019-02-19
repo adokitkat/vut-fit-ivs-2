@@ -1,4 +1,4 @@
-# IVS project 2 - Kalkulačka
+﻿# IVS project 2 - Kalkulačka
 ## Info
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor odio metus, et tincidunt enim viverra et. Donec egestas pellentesque neque sit amet lobortis. Nulla facilisi. Etiam ultrices molestie mauris. Vestibulum dignissim augue sit amet nisi efficitur, a gravida lorem tincidunt.
 
@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor odi
 
 ## Prerequisities
 ### Vypni blbý githubovský email check
-![](email.gif)
+![](README_files/email.gif)
 
 ### Linux (Debian-based, e.g. Ubuntu)  
 ```
