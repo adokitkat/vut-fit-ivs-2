@@ -23,24 +23,25 @@ class Math:
         tmp = self.val + other.val
         return Math(tmp)
 
+    def __sub__(self, other):
+
+        tmp = self.val - other.val
+        return Math(tmp)
+
     def __mul__(self, other):
 
         tmp = self.val * other.val
+        return Math(tmp)
+
+    def __div__(self, other):
+
+        tmp = self.val / other.val
         return Math(tmp)
 
     def __pow__(self, other):
 
         tmp = self.val ** other.val
         return Math(tmp) 
-
-    def ln(self):
-        n = 100000000.0
-        return Math(n * ((self.val ** (1/n)) - 1))
-
-    def log(self, base):
-        tmp = Math.ln(self.val)/Math.ln(base)
-        return Math(tmp)
-
 
     def root(self, n=None):
 
@@ -61,6 +62,13 @@ class Math:
 
         return Math(tmp)
 
+    def ln(self):
+        n = 100000000.0
+        return Math(n * ((self.val ** (1/n)) - 1))
+
+    def log(self, base):
+        tmp = Math.ln(self.val)/Math.ln(base)
+        return Math(tmp)
 
     def C(self):
         global result
@@ -70,14 +78,14 @@ class Math:
 
     def __str__(self):
 
-        tmp = self.val
+        value = self.val
         
         try: # If float
-            if tmp.is_integer():
-                tmp = int(tmp)
+            if value.is_integer():
+                value = int(value)
             else:
-                tmp = round(tmp, 15)
+                value = round(value, 15)
         except:
             pass
 
-        return str(tmp)
+        return str(value)
