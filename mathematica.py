@@ -33,6 +33,14 @@ class Math:
         tmp = self.val ** other.val
         return Math(tmp) 
 
+    def ln(self):
+        n = 100000000.0
+        return Math(n * ((self.val ** (1/n)) - 1))
+
+    def log(self, base):
+        tmp = Math.ln(self.val)/Math.ln(base)
+        return Math(tmp)
+
 
     def root(self, n=None):
 
