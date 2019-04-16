@@ -10,10 +10,10 @@ def simple_op_test():
     assert str(Math(236) + Math(98)) == "334"
     assert str(Math(0.2238) + Math(1.99999)) == "2.22379"
     assert str(Math(236) - Math(98)) == "138"
-    assert str(Math(0.2238) - Math(1.99999)) == "0.77619"
+    assert str(Math(0.2238) - Math(1.99999)) == "-1.77619"
     assert str(Math(236) * Math(98)) == "23128"
     assert str(Math(0.2238) * Math(1.99999)) == "0.447597762"
-    assert str(Math(236) / Math(98)) == "2.408163265"
+    assert str(Math(236) / Math(98)) == "2.408163265306122"
     assert str(Math(0.2238) / Math(1.99999)) == "0.223802238"
 
 def factorial_test():
@@ -32,12 +32,12 @@ def root_test():
     assert str(Math(9).root(0)) == "Math Error"
 
 def power_test():
-    assert str(Math(6) ** str(Math(10)) == "60466176"
-    assert str(Math(-3) ** str(Math(9)) == "-19683"
-    assert str(Math(0) ** str(Math(80085)) == "0"
-    assert str(Math(1.26) ** str(Math(3)) == "2.000376"
-    assert str(Math(2) ** str(Math(0)) == "Math Error"
-    assert str(Math(2) ** str(Math(-2543)) == "Math Error"
+    assert str(Math(6) ** Math(10)) == "60466176"
+    assert str(Math(-3) ** Math(9)) == "-19683"
+    assert str(Math(0) ** Math(80085)) == "0"
+    assert str(Math(1.26) ** Math(3)) == "2.000376"
+    assert str(Math(2) ** Math(0)) == "Math Error"
+    assert str(Math(2) ** Math(-2543)) == "Math Error"
 
 def log_test():
     assert str(Math(2).ln()) == "0.69314718"
