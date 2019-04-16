@@ -12,7 +12,7 @@ class Math:
             try:
                 tmp = eval(str(arg).replace('^','**'))
             except:
-                pass
+                pass ###
 
             self.val = tmp
             result = self.val
