@@ -256,7 +256,6 @@ class Ui_MainWindow(object):
 #        #number = []
 #        values = [self.lineEdit.text()]
 
-
     def numbers(self, x):
         global values, number
 
@@ -266,7 +265,7 @@ class Ui_MainWindow(object):
             number.append(x)
 
         try:
-            if number[0] == "0" and number[1] != ".":
+            if number[0] is "0" and number[1] is not ".":
                 number.pop(0)
         except:
             pass
@@ -282,9 +281,14 @@ class Ui_MainWindow(object):
             number = []
         
         try:
-            if values[0] :
-                values.append(x)
+            if values[0]:
+               
+                if values[-1] is "*" or values[-1] is "/":
+                   values.pop()
+                
+                values.append(x)             
                 self.lineEdit.setText(''.join(values))
+
         except:
             pass
 
