@@ -272,22 +272,30 @@ class Ui_MainWindow(object):
     
     def operand(self, x):
         global values, number
-        values.append(''.join(number))
-        number = []
-        values.append(x)
-        self.lineEdit.setText(''.join(values))
+
+        if number:
+            values.append(''.join(number))
+            number = []
+        
+        try:
+            if values[0] :
+                values.append(x)
+                self.lineEdit.setText(''.join(values))
+        except:
+            pass
 
     def evaluate(self):
         global values, number
-        if values:
-            print(values, number)
-            expr = ''.join(values) + ''.join(number)
-            print(expr)
-            result = Math(expr)
-            self.lineEdit.setText(str(result))
-            print(result)
-            values = []
-            number = []
+        
+        print(values, number)
+        #expr = ''.join(values) + ''.join(number)
+        expr = self.lineEdit.text()
+        print(expr)
+        result = Math(expr)
+        self.lineEdit.setText(str(result))
+        print(result)
+        values = [str(result)]
+        number = []
 
     def clear(self):
         global values, number
