@@ -292,7 +292,6 @@ class Ui_MainWindow(object):
         global values, number
         
         print(values, number)
-        #expr = ''.join(values) + ''.join(number)
         expr = self.lineEdit.text()
         print(expr)
         result = Math(expr)
