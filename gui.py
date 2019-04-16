@@ -12,6 +12,8 @@ from mathematica import Math
 
 values = []
 number = []
+overwrite_flag = 0
+log_flag = 0
 
 class Ui_MainWindow(object):
 
@@ -241,7 +243,7 @@ class Ui_MainWindow(object):
         self.pushButton_22.clicked.connect(self.factorial)
 
         self.pushButton_18.clicked.connect(self.ln)
-#        self.pushButton_19.clicked.connect(lambda: self.log)
+        self.pushButton_19.clicked.connect(self.log)
 
     def factorial(self):
         global values, number
@@ -257,90 +259,95 @@ class Ui_MainWindow(object):
         number = []
         values = [str(result)]
 
-#    def log(self):
-#        global values, number
-#        #result = Math(self.lineEdit.text()).log(base)
-#        
-#        #number = []
-#        values = [self.lineEdit.text()]
+    def log(self):
+        global values, number, overwrite_flag, log_flag
+        overwrite_flag = 0
+        log_flag = 1
+        values = self.lineEdit.text()
+        self.lineEdit.setText("log(x, "+str(values)+")")
+        number = []
 
     def numbers(self, x):
-        global values, number
-
-        if x == "." and "." in number:
-            pass
-        else:
+        global values, number, overwrite_flag
+        
+        if overwrite_flag is 1:
+            values = []
+            overwrite_flag = 0
+        
+        if log_flag is 1:
             number.append(x)
+            num = ''.join(number)
+            self.lineEdit.setText("log("+str(num)+", "+str(values)+")")
+            
+        else:
+            if x == "." and "." in number:
+                pass
+            else:
+                number.append(x)
 
-        try:
-            if number[0] is "0" and number[1] is not ".":
-                number.pop(0)
-        except:
-            pass
+            try:
+                if number[0] is "0" and number[1] is not ".":
+                    number.pop(0)
+            except:
+                pass
 
-        num = ''.join(number)
-        self.lineEdit.setText(''.join(values)+num)
+            num = ''.join(number)
+            self.lineEdit.setText(''.join(values)+num)
     
     def operand(self, x):
-        global values, number
+        global values, number, overwrite_flag
+
+        overwrite_flag = 0
 
         if number:
             values.append(''.join(number))
             number = []
-        
+ 
         try:
-            if values[0]:
-               
+            if x is "+" or x is "-":
+                values.append(x)
+                print(x, values)
+                self.lineEdit.setText(''.join(values))
+
+            elif type(values[0]) is int or type(values[0]) is float:
+
                 if values[-1] is "*" or values[-1] is "/":
                    values.pop()
                 
-                values.append(x)             
+                values.append(x)     
                 self.lineEdit.setText(''.join(values))
-
         except:
             pass
 
     def evaluate(self):
-        global values, number
+        global values, number, overwrite_flag, log_flag
         
-        print(values, number)
-        expr = self.lineEdit.text()
-        print(expr)
-        result = Math(expr)
-        self.lineEdit.setText(str(result))
-        print(result)
-        values = [str(result)]
-        number = []
+        if log_flag == 1:
+            result = Math(int(values)).log(int(''.join(number)))
+            self.lineEdit.setText(str(result))
+            
+            number = []
+            values = [str(result)]
+            log_flag = 0
+
+        else:
+            print(values, number)
+            expr = self.lineEdit.text()
+            print(expr)
+            result = Math(expr)
+            self.lineEdit.setText(str(result))
+            print(result)
+
+            overwrite_flag = 1
+            values = [str(result)]
+            number = []
 
     def clear(self):
         global values, number
+        
         values = []
         number = []
         self.lineEdit.setText('')
-
-
-#    def number(self, x):
-#        global values
-#        values.append(x)
-#        num = ''.join(values)
-#        self.lineEdit.setText(num)
-#        values = [num]
-#    
-#    def operand(self, opr):
-#        global values
-#        if values[0]:
-#            values.append(opr)
-#            num = ''.join(values)
-#            self.lineEdit.setText(num)
-#            values[0] = '(' + values[0] + ')'
-#
-#    def evaluate(self):
-#        global values
-#        result = Math(str(values[0]))
-#        self.lineEdit.setText(str(result))
-#        print(result)
-#        values = []
-#
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
