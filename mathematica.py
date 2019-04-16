@@ -77,7 +77,7 @@ class Math:
 
     def factorial(self):
         result = 1
-        for i in range(1,int(self.val)):
+        for i in range(1,int((self.val)+1)):
             result *= i 
         return Math(result)
 
