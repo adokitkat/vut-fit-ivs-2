@@ -238,9 +238,17 @@ class Ui_MainWindow(object):
         self.pushButton_16.clicked.connect(lambda: self.operand("/"))
         self.pushButton_20.clicked.connect(lambda: self.operand("^"))
         self.pushButton_21.clicked.connect(lambda: self.operand("^2"))
+        self.pushButton_22.clicked.connect(self.factorial)
 
         self.pushButton_18.clicked.connect(self.ln)
 #        self.pushButton_19.clicked.connect(lambda: self.log)
+
+    def factorial(self):
+        global values, number
+        result = Math(self.lineEdit.text()).factorial()
+        self.lineEdit.setText(str(result))
+        number = []
+        values = [str(result)]
 
     def ln(self):
         global values, number
