@@ -259,8 +259,12 @@ class Ui_MainWindow(object):
 
     def numbers(self, x):
         global values, number
-        number.append(x)
-        
+
+        if x == "." and "." in number:
+            pass
+        else:
+            number.append(x)
+
         try:
             if number[0] == "0" and number[1] != ".":
                 number.pop(0)
