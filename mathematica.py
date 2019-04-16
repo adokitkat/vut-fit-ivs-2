@@ -75,6 +75,11 @@ class Math:
         result = 0
         return Math()
 
+    def factorial(self):
+        result = 1
+        for i in range(1,int(self.val)):
+            result *= i 
+        return Math(result)
 
     def __str__(self):
 
