@@ -64,12 +64,12 @@ class Math:
 
     def ln(self):
         n = 100000000.0
-        return Math(n * ((self.val ** (1/n)) - 1))
+        return Math(round(n * ((self.val ** (1/n)) - 1), 8))
 
     def log(self, base):
         n = 100000000.0
         tmp = (n * ((self.val ** (1/n)) - 1)) / (n * ((base ** (1/n)) - 1))
-        return Math(tmp)
+        return Math(round(tmp, 8))
 
     def C(self):
         global result
@@ -80,7 +80,8 @@ class Math:
         result = 1
 
         if type(self.val) is float or self.val < 0:
-            raise "Math Error"
+            #raise "Math Error"
+            return "Math Error"
 
         for i in range(1,int((self.val)+1)):
             result *= i 
