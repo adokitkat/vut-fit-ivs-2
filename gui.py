@@ -247,6 +247,7 @@ class Ui_MainWindow(object):
 
     def factorial(self):
         global values, number
+        
         result = Math(self.lineEdit.text()).factorial()
         self.lineEdit.setText(str(result))
         number = []
@@ -254,6 +255,7 @@ class Ui_MainWindow(object):
 
     def ln(self):
         global values, number
+
         result = Math(self.lineEdit.text()).ln()
         self.lineEdit.setText(str(result))
         number = []
@@ -261,6 +263,7 @@ class Ui_MainWindow(object):
 
     def log(self):
         global values, number, overwrite_flag, log_flag
+
         overwrite_flag = 0
         log_flag = 1
         values = self.lineEdit.text()
