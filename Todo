@@ -1,0 +1,90 @@
+﻿BUGS:
+
+PATTERN:
+---------------------------------------------------
+HOW: - Definuje, čo som spravil, aby  bug nastal
+
+EXPECTED: - Čo som očakával
+
+GOT: - Čo som dostal
+
+MESSAGE: - Opísanie problemu
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
+HOW:
+	PRESSED 8
+	PRESSED Log
+	PRESSED "="
+	PRESSED CLEAR "C"
+	PRESSED 8
+
+EXPECTED: 8
+
+GOT: log(8, [])
+
+MESSAGE: Nefunguje "Clear" pri nesprávne zadanom logaritme.
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
+HOW:
+	1.Pressed "."
+
+EXPECTED: 0.
+
+GOT: .
+
+MESSAGE: Pri stlačení "." sa namiesto "0." zapisuje do textboxu ".".
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
+HOW:
+	TYPED -2
+	TYPED ^2
+	PRESSED "="
+
+EXPECTED: 4
+	
+GOT: -4
+
+MESSAGE: Pri umocňovaní záporného čísla na druhú je výsledok záporný.
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
+HOW:
+	TYPED 2
+	PRESSED "+"
+	PRESSED 4
+
+EXPECTED: 6
+
+GOT: 4
+
+MESSAGE: Treba linknúť nahrávanie z textboxu a buttonov.
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
+HOW:
+	PRESSED 8
+	TYPED 4 INSTEAD OF X
+	PRESSED "="
+	
+EXPECTED: 1.5
+	
+GOT: LOG(4,8)
+
+MESSAGE: Treba linknúť nahrávanie z textboxu a buttonov aj pri logaritme - prepisovaní X.
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
+
+TODO:
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
+MESSAGE: Treba linknúť buttony s funkciami
+MESSAGE: Treba vypísať SYNTAX ERROR, pri nesprávne zadanom vstupe.
+MESSAGE: Treba vypísať MATH ERROR pri: X/0 [Delenie nulou], Log(Base,X)[Ak Base <=0], Ln(X) [Ak X <= 0], Math(-2).Root() -> EXPECTED: MATH ERROR, GOT: 8.659560562354934e-17+1.4142135623730951j [Pri SQRT(X) ak X < 0]
+---------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---------------------------------------------------
