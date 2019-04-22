@@ -1,3 +1,5 @@
 __pycache__/*
 test_local.py
 .vscode/*
+gui.ui
+gui.1.py

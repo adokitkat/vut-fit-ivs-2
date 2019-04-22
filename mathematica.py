@@ -8,13 +8,21 @@ class Math:
         if arg is None:
             self.val = result
         else:
-            try:
-                tmp = eval(str(arg).replace('^','**'))
-            except:
-                pass ###
+            self.init_eval(str(arg))
+            
+    def init_eval(self, expr):
+        global result
 
+        try:
+            tmp = eval(expr.replace('^','**'))
             self.val = tmp
             result = self.val
+        except Exception as e:
+            if str(e) == "division by zero":
+                self.val = "Math Error"
+            else:
+                self.val = "Syntax Error"
+            #pass ##
 
     def __add__(self, other):
         tmp = self.val + other.val
@@ -45,6 +53,10 @@ class Math:
         return Math(tmp) 
 
     def root(self, n=None):
+
+        if self.val < 0:
+            return "Math Error"
+
         if n is None:
             tmp = self.val ** (1/2)
         else:
@@ -57,17 +69,21 @@ class Math:
             if n != 0:
                 tmp = self.val ** (1/n)
             else:
-                print("Math Error") ####
-                raise ZeroDivisionError
+                return "Math Error" ####
+                #raise ZeroDivisionError
 
         return Math(tmp)
 
     def ln(self):
         n = 100000000.0
+        if self.val <= 0:
+            return "Math Error"
         return Math(round(n * ((self.val ** (1/n)) - 1), 8))
 
     def log(self, base):
         n = 100000000.0
+        if self.val <= 0 or base <= 0:
+            return "Math Error"
         tmp = (n * ((self.val ** (1/n)) - 1)) / (n * ((base ** (1/n)) - 1))
         return Math(round(tmp, 8))
 
