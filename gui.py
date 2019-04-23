@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'gui_new.ui'
@@ -284,61 +283,6 @@ class Ui_Basic(object):
         except:
             values = ["0"]
             self.lineEdit.setText(''.join(values+number))
-
-        self.fit()
-
-    def sqroot(self):
-        global values, number, overwrite_flag
-        
-        result = Math(self.lineEdit.text()).root()
-        self.lineEdit.setText(str(result))
-        number = []
-        values = [str(result)]
-        overwrite_flag = 1
-
-        self.fit()
-
-    def root(self):
-        global values, number, overwrite_flag, root_flag
-
-        overwrite_flag = 0
-        root_flag = 1
-        values = self.lineEdit.text()
-        self.lineEdit.setText("√"+str(values))
-        number = []
-
-        self.fit()
-
-    def ln(self):
-        global values, number, overwrite_flag
-
-        result = Math(self.lineEdit.text()).ln()
-        self.lineEdit.setText(str(result))
-        number = []
-        values = [str(result)]
-        overwrite_flag = 1
-
-        self.fit()
-
-    def log(self):
-        global values, number, overwrite_flag, log_flag
-
-        overwrite_flag = 0
-        log_flag = 1
-        values = self.lineEdit.text()
-        self.lineEdit.setText("log(x, "+str(values)+")")
-        number = []
-
-        self.fit()
-
-    def factorial(self):
-        global values, number, overwrite_flag
-        
-        result = Math(self.lineEdit.text()).factorial()
-        self.lineEdit.setText(str(result))
-        number = []
-        values = [str(result)]
-        overwrite_flag = 1
 
         self.fit()
 
@@ -1165,6 +1109,18 @@ class MainWindowAdvanced(QMainWindow, Ui_Advanced):
         self.move(qtRectangle.topLeft())
 
     def keyPressEvent(self, e):
+
+        if (e.modifiers() & Qt.ShiftModifier):
+            val = e.key()
+
+            if QtGui.QKeySequence(val).toString() == "(":
+                self.numbers("(")
+
+            if QtGui.QKeySequence(val).toString() == ")":
+                self.numbers(")")
+            
+            if QtGui.QKeySequence(val).toString() == "!":
+                self.factorial()
 
         if   e.key() == Qt.Key_0:
             self.numbers("0")
