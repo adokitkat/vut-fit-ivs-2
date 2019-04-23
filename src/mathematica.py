@@ -95,7 +95,6 @@ class Math:
         result = 1
 
         if type(self.val) is float or self.val < 0:
-            #raise "Math Error"
             return "Math Error"
 
         for i in range(1,int((self.val)+1)):
@@ -107,8 +106,6 @@ class Math:
         try: # If float
             if value.is_integer():
                 value = int(value)
-                #if len(str(value)) > 19 :
-                #    return "Out of range" 
             else:
                 value = round(value, 15)
         except:
