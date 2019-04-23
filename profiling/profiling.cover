@@ -1,0 +1,70 @@
+       #!/usr/bin/env python3
+       
+    1: from mathematica import Math
+    1: import sys
+    1: import cProfile
+       
+       ### global variables ###
+    1: x=sys.stdin.readlines()
+    1: N=len(x)
+       
+    1: def avrg(): 
+           # average of input numbers  
+       
+    1:     def sumerino_1():
+               # sum of input numbers
+               global x
+    1:         sum=0
+10001:         for i in range(len(x)):
+10000:             x[i]=x[i].replace('\n','')
+10000:             sum = Math(sum) + Math(x[i])
+    1:         return sum 
+       
+    1:     def dividing_1():
+               # 1/N
+               global N
+    1:         div = Math(1.0) / Math(N)
+    1:         return div
+       
+    1:     def mult_1(a,b):
+    1:         m = a * b
+    1:         return m
+       
+    1:     average = mult_1(sumerino_1(), dividing_1())
+    1:     return average
+       
+    1: av = avrg()
+    1: def rootino():
+           def dividing_2():
+               global N
+               div = Math(1.0) / (Math(N) - Math(1))
+               return div
+       
+           def bracket():
+               def sumerino_2():
+                   global x
+                   sum=0
+                   for i in range(len(x)):
+                       x[i]=x[i].replace('\n','')
+                       sum = Math(sum) + (Math(x[i]) ** Math(2))
+                   return sum 
+       
+               def mult_2():
+                   global N, av
+                   m = Math(N) * (av ** Math(2))
+                   return m
+       
+               def sub(a,b):
+                   s = a - b
+                   return s
+               
+               brac = sub(sumerino_2(), mult_2())
+               return brac
+       
+           def mult_3(a,b):
+               m = a * b
+               return m
+           
+           multRes = mult_3(dividing_2(),bracket())
+           root = multRes.root()
+           return root

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8" .="">
+<title>profiling-v1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="profiling-v1_files/snakeviz.css" rel="stylesheet">
+<!-- DataTables CSS -->
+<link href="profiling-v1_files/jquery.css" rel="stylesheet">
+</head>
+<body>
+<h1 id="snakeviz-text">
+<a href="https://jiffyclub.github.io/snakeviz/">SnakeViz</a>
+</h1>
+<!-- reset button -->
+<span id="resetbuttons">
+<div class="button-div">
+<button id="resetbutton-root" disabled="True">Reset Root</button>
+</div>
+<div class="button-div">
+<button id="resetbutton-zoom" disabled="disabled">Reset Zoom</button>
+</div>
+</span>
+<!-- style select -->
+<label id="sv-style-label">Style:
+<select name="sv-style" id="sv-style-select">
+<option value="icicle">Icicle</option>
+<option value="sunburst" selected="selected">Sunburst</option>
+</select>
+</label>
+<!-- depth select -->
+<label id="sv-depth-label">Depth:
+<select name="sv-depth" id="sv-depth-select">
+
+<option value="3">3</option>
+
+<option value="5" selected="selected">5</option>
+
+<option value="10">10</option>
+
+<option value="15">15</option>
+
+<option value="20">20</option>
+
+</select>
+</label>
+<!-- cutoff select -->
+<label id="sv-cutoff-label">Cutoff:
+<select name="sv-cutoff" id="sv-cutoff-select">
+<option value="0.001" selected="selected">1 ⁄ 1000</option>
+<option value="0.01">1 ⁄ 100</option>
+<option value="0">None</option>
+</select>
+</label>
+<!-- information div -->
+<div id="sv-info-div" class="sunburst" style="height: 565.2px; width: 491.143px; display: none;"><div class="sv-info-label">Name:</div>
+<div class="sv-info-item">__init__</div>
+<div class="sv-info-label">Cumulative Time:</div>
+<div class="sv-info-item">0.574 s (157.82 %)</div>
+<div class="sv-info-label">File:</div>
+<div class="sv-info-item">mathematica.py</div>
+<div class="sv-info-label">Line:</div>
+<div class="sv-info-item">5</div>
+<div class="sv-info-label">Directory:</div>
+<div class="sv-info-item">/home/rumls/Desktop/project2/</div></div>
+<!-- call stack -->
+<div id="sv-call-stack">
+<div id="working-spinner" class="spinner" style="display: none;">
+<div class="bounce1"></div>
+<div class="bounce2"></div>
+<div class="bounce3"></div>
+</div>
+<div style="display: inline-block;">
+<button id="sv-call-stack-btn" class="">Call Stack</button>
+</div>
+<div id="sv-call-stack-list" style="max-height: 565.2px; display: none;"><div><span>0.&nbsp;</span><span>profiling.py:14(avrg)</span></div></div>
+</div>
+<!-- Error message -->
+<div id="sv-error-div" class="sv-error-msg" style="display: none;">
+<p>
+An error occurred processing your profile.
+You can try a lower depth, a larger cutoff,
+or try profiling a smaller portion of your code.
+If you continue to have problems you can
+<a href="https://github.com/jiffyclub/snakeviz/issues">
+contact us on GitHub</a>.
+</p>
+<div id="sv-error-close-div" class="sv-error-close">Close</div>
+</div>
+<!-- vis -->
+<div style="text-align: center;">
+<div id="chart" style="margin-left: auto; margin-right: auto;"><svg width="753.6" height="753.6"><g id="container" transform="translate(376.8,376.8)"><circle r="376.8" style="opacity: 0;"></circle><path id="path-0" d="M0,62.80000000000001A62.80000000000001,62.80000000000001 0 1,1 0,-62.80000000000001A62.80000000000001,62.80000000000001 0 1,1 0,62.80000000000001Z" fill-rule="evenodd" style="fill: rgb(49, 130, 189); stroke: rgb(255, 255, 255);"></path><path id="path-1" d="M7.69078189864538e-15,-125.60000000000002A125.60000000000002,125.60000000000002 0 1,1 -0.013021178803648718,-125.59999932503547L-0.006510589401824359,-62.799999662517735A62.80000000000001,62.80000000000001 0 1,0 3.84539094932269e-15,-62.80000000000001Z" fill-rule="evenodd" style="fill: rgb(107, 174, 214); stroke: rgb(255, 255, 255);"></path><path id="path-2" d="M1.1536172847968068e-14,-188.4A188.4,188.4 0 1,1 -108.80108556859032,153.80794446027906L-72.5340570457269,102.53862964018604A125.60000000000002,125.60000000000002 0 1,0 7.69078189864538e-15,-125.60000000000002Z" fill-rule="evenodd" style="fill: rgb(198, 219, 239); stroke: rgb(255, 255, 255);"></path><path id="path-3" d="M1.538156379729076e-14,-251.20000000000005A251.20000000000005,251.20000000000005 0 1,1 -78.92142339686833,238.4802904413953L-59.191067547651244,178.86021783104647A188.4,188.4 0 1,0 1.1536172847968068e-14,-188.4Z" fill-rule="evenodd" style="fill: rgb(230, 85, 13); stroke: rgb(255, 255, 255);"></path><path id="path-4" d="M1.9226954746613447e-14,-314A314,314 0 1,1 -98.6517792460854,298.1003630517441L-78.92142339686833,238.4802904413953A251.20000000000005,251.20000000000005 0 1,0 1.538156379729076e-14,-251.20000000000005Z" fill-rule="evenodd" style="fill: rgb(230, 85, 13); stroke: rgb(255, 255, 255);"></path><path id="path-5" d="M-78.92142339686833,238.4802904413953A251.20000000000005,251.20000000000005 0 0,1 -122.63650546482948,219.22985090396534L-91.9773790986221,164.42238817797397A188.4,188.4 0 0,0 -59.191067547651244,178.86021783104647Z" fill-rule="evenodd" style="fill: rgb(253, 141, 60); stroke: rgb(255, 255, 255);"></path><path id="path-6" d="M-122.63650546482948,219.22985090396534A251.20000000000005,251.20000000000005 0 0,1 -145.06811409145388,205.07725928037203L-108.8010855685904,153.807944460279A188.4,188.4 0 0,0 -91.9773790986221,164.42238817797397Z" fill-rule="evenodd" style="fill: rgb(158, 202, 225); stroke: rgb(255, 255, 255);"></path><path id="path-7" d="M-108.80108556859032,153.80794446027906A188.4,188.4 0 0,1 -103.19197100765328,-157.62606738593604L-68.79464733843552,-105.08404492395738A125.60000000000002,125.60000000000002 0 0,0 -72.5340570457269,102.53862964018604Z" fill-rule="evenodd" style="fill: rgb(253, 174, 107); stroke: rgb(255, 255, 255);"></path><path id="path-8" d="M-145.0681140914538,205.0772592803721A251.20000000000005,251.20000000000005 0 0,1 -137.58929467687105,-210.16808984791476L-103.19197100765328,-157.62606738593604A188.4,188.4 0 0,0 -108.80108556859032,153.80794446027906Z" fill-rule="evenodd" style="fill: rgb(198, 219, 239); stroke: rgb(255, 255, 255);"></path><path id="path-9" d="M-181.33514261431722,256.3465741004651A314,314 0 0,1 -210.10139526278587,-233.35253096684127L-168.0811162102287,-186.68202477347305A251.20000000000005,251.20000000000005 0 0,0 -145.0681140914538,205.0772592803721Z" fill-rule="evenodd" style="fill: rgb(230, 85, 13); stroke: rgb(255, 255, 255);"></path><path id="path-10" d="M-217.60217113718065,307.6158889205581A376.8,376.8 0 0,1 -252.12167431534303,-280.0230371602095L-210.10139526278587,-233.35253096684127A314,314 0 0,0 -181.33514261431722,256.3465741004651Z" fill-rule="evenodd" style="fill: rgb(230, 85, 13); stroke: rgb(255, 255, 255);"></path><path id="path-11" d="M-210.10139526278587,-233.35253096684127A314,314 0 0,1 -186.0973596153306,-252.91060227717287L-148.8778876922645,-202.32848182173834A251.20000000000005,251.20000000000005 0 0,0 -168.0811162102287,-186.68202477347305Z" fill-rule="evenodd" style="fill: rgb(253, 141, 60); stroke: rgb(255, 255, 255);"></path><path id="path-12" d="M-186.0973596153306,-252.91060227717287A314,314 0 0,1 -171.9866183460888,-262.71011230989336L-137.58929467687105,-210.16808984791476A251.20000000000005,251.20000000000005 0 0,0 -148.8778876922645,-202.32848182173834Z" fill-rule="evenodd" style="fill: rgb(158, 202, 225); stroke: rgb(255, 255, 255);"></path><path id="path-13" d="M-103.19197100765328,-157.62606738593604A188.4,188.4 0 0,1 -10.551397028060322,-188.10430090977783L-7.034264685373548,-125.40286727318524A125.60000000000002,125.60000000000002 0 0,0 -68.79464733843552,-105.08404492395738Z" fill-rule="evenodd" style="fill: rgb(107, 174, 214); stroke: rgb(255, 255, 255);"></path><path id="path-14" d="M-10.551397028060322,-188.10430090977783A188.4,188.4 0 0,1 -0.019531768205305743,-188.39999898755318L-0.013021178803537163,-125.59999932503547A125.60000000000002,125.60000000000002 0 0,0 -7.034264685373548,-125.40286727318524Z" fill-rule="evenodd" style="fill: rgb(158, 202, 225); stroke: rgb(255, 255, 255);"></path></g></svg></div>
+</div>
+<br>
+<!-- stats table -->
+<div id="table_div">
+<div id="pstats-table_wrapper" class="dataTables_wrapper no-footer"><div id="pstats-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="pstats-table"></label></div><table class="display dataTable no-footer" id="pstats-table" role="grid" aria-describedby="pstats-table_info" style="width: 1787px;" cellspacing="0" cellpadding="0" border="0">
+<thead><tr role="row"><th class="sorting" tabindex="0" aria-controls="pstats-table" rowspan="1" colspan="1" style="width: 134px;" aria-label="ncalls: activate to sort column ascending">ncalls</th><th class="sorting_desc" tabindex="0" aria-controls="pstats-table" rowspan="1" colspan="1" style="width: 157px;" aria-label="tottime: activate to sort column ascending" aria-sort="descending">tottime</th><th class="sorting" tabindex="0" aria-controls="pstats-table" rowspan="1" colspan="1" style="width: 153px;" aria-label="percall: activate to sort column ascending">percall</th><th class="sorting" tabindex="0" aria-controls="pstats-table" rowspan="1" colspan="1" style="width: 184px;" aria-label="cumtime: activate to sort column ascending">cumtime</th><th class="sorting" tabindex="0" aria-controls="pstats-table" rowspan="1" colspan="1" style="width: 153px;" aria-label="percall: activate to sort column ascending">percall</th><th class="sorting" tabindex="0" aria-controls="pstats-table" rowspan="1" colspan="1" style="width: 790px;" aria-label="filename:lineno(function): activate to sort column ascending">filename:lineno(function)</th></tr></thead><tbody><tr role="row" class="odd"><td class="">110020</td><td class="sorting_1">0.4454</td><td class="">4.048e-06</td><td class="">0.4574</td><td class="">4.158e-06</td><td class="">~:0(&lt;built-in method builtins.eval&gt;)</td></tr><tr role="row" class="even"><td class="">110020</td><td class="sorting_1">0.07744</td><td class="">7.039e-07</td><td class="">0.574</td><td class="">5.217e-06</td><td class="">mathematica.py:5(__init__)</td></tr><tr role="row" class="odd"><td class="">2</td><td class="sorting_1">0.0303</td><td class="">0.01515</td><td class="">0.3636</td><td class="">0.1818</td><td class="">profiling.py:17(sumerino_1)</td></tr><tr role="row" class="even"><td class="">29997</td><td class="sorting_1">0.02517</td><td class="">8.391e-07</td><td class="">0.02517</td><td class="">8.391e-07</td><td class="">mathematica.py:90(__str__)</td></tr><tr role="row" class="odd"><td class="">1</td><td class="sorting_1">0.02298</td><td class="">0.02298</td><td class="">0.2892</td><td class="">0.2892</td><td class="">profiling.py:47(sumerino_2)</td></tr><tr role="row" class="even"><td class="">140020</td><td class="sorting_1">0.01857</td><td class="">1.326e-07</td><td class="">0.01857</td><td class="">1.326e-07</td><td class="">~:0(&lt;method 'replace' of 'str' objects&gt;)</td></tr><tr role="row" class="odd"><td class="">30000</td><td class="sorting_1">0.01399</td><td class="">4.664e-07</td><td class="">0.1656</td><td class="">5.521e-06</td><td class="">mathematica.py:19(__add__)</td></tr><tr role="row" class="even"><td class="">10001</td><td class="sorting_1">0.007053</td><td class="">7.052e-07</td><td class="">0.05607</td><td class="">5.607e-06</td><td class="">mathematica.py:43(__pow__)</td></tr><tr role="row" class="odd"><td class="">1</td><td class="sorting_1">1e-05</td><td class="">1e-05</td><td class="">1.6e-05</td><td class="">1.6e-05</td><td class="">mathematica.py:47(root)</td></tr><tr role="row" class="even"><td class="">2</td><td class="sorting_1">7e-06</td><td class="">3.5e-06</td><td class="">4.9e-05</td><td class="">2.45e-05</td><td class="">profiling.py:26(dividing_1)</td></tr><tr role="row" class="odd"><td class="">2</td><td class="sorting_1">6e-06</td><td class="">3e-06</td><td class="">0.3637</td><td class="">0.1819</td><td class="">profiling.py:14(avrg)</td></tr><tr role="row" class="even"><td class="">4</td><td class="sorting_1">6e-06</td><td class="">1.5e-06</td><td class="">3.3e-05</td><td class="">8.25e-06</td><td class="">mathematica.py:27(__mul__)</td></tr><tr role="row" class="odd"><td class="">1</td><td class="sorting_1">5e-06</td><td class="">5e-06</td><td class="">3.6e-05</td><td class="">3.6e-05</td><td class="">profiling.py:41(dividing_2)</td></tr><tr role="row" class="even"><td class="">1</td><td class="sorting_1">5e-06</td><td class="">5e-06</td><td class="">0.2893</td><td class="">0.2893</td><td class="">profiling.py:40(rootino)</td></tr><tr role="row" class="odd"><td class="">1</td><td class="sorting_1">4e-06</td><td class="">4e-06</td><td class="">0.2892</td><td class="">0.2892</td><td class="">profiling.py:46(bracket)</td></tr><tr role="row" class="even"><td class="">2</td><td class="sorting_1">4e-06</td><td class="">2e-06</td><td class="">1.6e-05</td><td class="">8e-06</td><td class="">mathematica.py:23(__sub__)</td></tr><tr role="row" class="odd"><td class="">2</td><td class="sorting_1">2e-06</td><td class="">1e-06</td><td class="">2e-05</td><td class="">1e-05</td><td class="">profiling.py:32(mult_1)</td></tr><tr role="row" class="even"><td class="">1</td><td class="sorting_1">2e-06</td><td class="">2e-06</td><td class="">3.9e-05</td><td class="">3.9e-05</td><td class="">profiling.py:55(mult_2)</td></tr><tr role="row" class="odd"><td class="">3</td><td class="sorting_1">2e-06</td><td class="">6.667e-07</td><td class="">2.6e-05</td><td class="">8.667e-06</td><td class="">mathematica.py:31(__truediv__)</td></tr><tr role="row" class="even"><td class="">3</td><td class="sorting_1">1e-06</td><td class="">3.333e-07</td><td class="">1e-06</td><td class="">3.333e-07</td><td class="">~:0(&lt;built-in method builtins.len&gt;)</td></tr><tr role="row" class="odd"><td class="">1</td><td class="sorting_1">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">&lt;string&gt;:1(&lt;module&gt;)</td></tr><tr role="row" class="even"><td class="">1</td><td class="sorting_1">0</td><td class="">0</td><td class="">1.1e-05</td><td class="">1.1e-05</td><td class="">profiling.py:60(sub)</td></tr><tr role="row" class="odd"><td class="">1</td><td class="sorting_1">0</td><td class="">0</td><td class="">8e-06</td><td class="">8e-06</td><td class="">profiling.py:67(mult_3)</td></tr><tr role="row" class="even"><td class="">1</td><td class="sorting_1">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">~:0(&lt;method 'disable' of '_lsprof.Profiler' objects&gt;)</td></tr></tbody></table><div class="dataTables_info" id="pstats-table_info" role="status" aria-live="polite">Showing 1 to 24 of 24 entries</div></div>
+</div>
+<!-- footer -->
+<footer class="sv-footer">
+<a class="footer-link" href="https://jiffyclub.github.io/snakeviz/">SnakeViz Docs</a>
+</footer>
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- Vendor JS -->
+<script src="profiling-v1_files/jquery-3.js"></script>
+<script src="profiling-v1_files/d3.js"></script>
+<script src="profiling-v1_files/jquery.js"></script>
+<script src="profiling-v1_files/lodash.js"></script>
+<script src="profiling-v1_files/immutable.js"></script>
+<!-- SnakeViz JS -->
+<script>
+// Make the stats table
+var table_data = [[['140020', 140020], '0.01857', '1.326e-07', '0.01857', '1.326e-07', '~:0(&lt;method &#39;replace&#39; of &#39;str&#39; objects&gt;)', "~:0(<method 'replace' of 'str' objects>)"], [['110020', 110020], '0.4454', '4.048e-06', '0.4574', '4.158e-06', '~:0(&lt;built-in method builtins.eval&gt;)', '~:0(<built-in method builtins.eval>)'], [['3', 3], '1e-06', '3.333e-07', '1e-06', '3.333e-07', '~:0(&lt;built-in method builtins.len&gt;)', '~:0(<built-in method builtins.len>)'], [['1', 1], '0', '0', '0', '0', '&lt;string&gt;:1(&lt;module&gt;)', '<string>:1(<module>)'], [['29997', 29997], '0.02517', '8.391e-07', '0.02517', '8.391e-07', 'mathematica.py:90(__str__)', '/home/rumls/Desktop/project2/mathematica.py:90(__str__)'], [['1', 1], '1e-05', '1e-05', '1.6e-05', '1.6e-05', 'mathematica.py:47(root)', '/home/rumls/Desktop/project2/mathematica.py:47(root)'], [['10001', 10001], '0.007053', '7.052e-07', '0.05607', '5.607e-06', 'mathematica.py:43(__pow__)', '/home/rumls/Desktop/project2/mathematica.py:43(__pow__)'], [['2', 2], '0.0303', '0.01515', '0.3636', '0.1818', 'profiling.py:17(sumerino_1)', 'profiling.py:17(sumerino_1)'], [['2', 2], '7e-06', '3.5e-06', '4.9e-05', '2.45e-05', 'profiling.py:26(dividing_1)', 'profiling.py:26(dividing_1)'], [['2', 2], '2e-06', '1e-06', '2e-05', '1e-05', 'profiling.py:32(mult_1)', 'profiling.py:32(mult_1)'], [['1', 1], '5e-06', '5e-06', '3.6e-05', '3.6e-05', 'profiling.py:41(dividing_2)', 'profiling.py:41(dividing_2)'], [['2', 2], '6e-06', '3e-06', '0.3637', '0.1819', 'profiling.py:14(avrg)', 'profiling.py:14(avrg)'], [['1', 1], '0.02298', '0.02298', '0.2892', '0.2892', 'profiling.py:47(sumerino_2)', 'profiling.py:47(sumerino_2)'], [['1', 1], '2e-06', '2e-06', '3.9e-05', '3.9e-05', 'profiling.py:55(mult_2)', 'profiling.py:55(mult_2)'], [['1', 1], '0', '0', '1.1e-05', '1.1e-05', 'profiling.py:60(sub)', 'profiling.py:60(sub)'], [['1', 1], '4e-06', '4e-06', '0.2892', '0.2892', 'profiling.py:46(bracket)', 'profiling.py:46(bracket)'], [['1', 1], '0', '0', '8e-06', '8e-06', 'profiling.py:67(mult_3)', 'profiling.py:67(mult_3)'], [['1', 1], '5e-06', '5e-06', '0.2893', '0.2893', 'profiling.py:40(rootino)', 'profiling.py:40(rootino)'], [['110020', 110020], '0.07744', '7.039e-07', '0.574', '5.217e-06', 'mathematica.py:5(__init__)', '/home/rumls/Desktop/project2/mathematica.py:5(__init__)'], [['30000', 30000], '0.01399', '4.664e-07', '0.1656', '5.521e-06', 'mathematica.py:19(__add__)', '/home/rumls/Desktop/project2/mathematica.py:19(__add__)'], [['2', 2], '4e-06', '2e-06', '1.6e-05', '8e-06', 'mathematica.py:23(__sub__)', '/home/rumls/Desktop/project2/mathematica.py:23(__sub__)'], [['4', 4], '6e-06', '1.5e-06', '3.3e-05', '8.25e-06', 'mathematica.py:27(__mul__)', '/home/rumls/Desktop/project2/mathematica.py:27(__mul__)'], [['3', 3], '2e-06', '6.667e-07', '2.6e-05', '8.667e-06', 'mathematica.py:31(__truediv__)', '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)'], [['1', 1], '0', '0', '0', '0', '~:0(&lt;method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects&gt;)', "~:0(<method 'disable' of '_lsprof.Profiler' objects>)"]];
+$(document).ready(function() {
+var table = $('#pstats-table').dataTable({
+'data': table_data,
+'columns': [
+{'title': 'ncalls', 'type': 'num', 'searchable': 'false',
+'data': {
+'_': function (row) {return row[0][0];},
+'sort': function (row) {return row[0][1]}
+}},
+{'title': 'tottime', 'type': 'num', 'searchable': 'false'},
+{'title': 'percall', 'type': 'num', 'searchable': 'false'},
+{'title': 'cumtime', 'type': 'num', 'searchable': 'false'},
+{'title': 'percall', 'type': 'num', 'searchable': 'false'},
+{'title': 'filename:lineno(function)'}
+],
+'order': [1, 'desc'],
+'paging': false
+}).api();
+$('#pstats-table tbody').on('click', 'tr', function() {
+var name = table.row(this).data()[6];
+sv_root_func_name = name;
+sv_draw_vis(name);
+sv_call_stack = [name];
+sv_update_call_stack_list();
+$('#resetbutton-zoom').prop('disabled', true);
+$('#resetbutton-root').prop('disabled', false);
+}).on('mouseenter', 'tr', function () {
+$(this).children('td').addClass('data-table-hover');
+}).on('mouseleave', 'tr', function () {
+$(this).children('td').removeClass('data-table-hover');
+});
+});
+</script>
+<!-- Web worker code for generating D3 JSON in a separate thread -->
+<script id="hierarchy-worker" type="javascript/worker">
+// This will all go into a web worker that will be used to generate
+// the visualization JSON while leaving the rest of the app responsive.
+//
+// We put this here instead of in a separate JS file so that the worker
+// can be stopped and restarted without loading the code from the server,
+// and so that the stats data can be embedded in the worker.
+var stats = {"~:0(<method 'replace' of 'str' objects>)": {'children': {}, 'stats': [140020, 140020, 0.018569, 0.018569], 'callers': {'profiling.py:17(sumerino_1)': [20000, 20000, 0.003237, 0.003237], 'profiling.py:47(sumerino_2)': [10000, 10000, 0.001371, 0.001371], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [110020, 110020, 0.013961, 0.013961]}, 'display_name': "~:0(<method 'replace' of 'str' objects>)"}, 'profiling.py:17(sumerino_1)': {'children': {"~:0(<method 'replace' of 'str' objects>)": [20000, 20000, 0.003237, 0.003237], '~:0(<built-in method builtins.len>)': [2, 2, 0.0, 0.0], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [40000, 40000, 0.028877, 0.21745099999999998], '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': [20000, 20000, 0.009268, 0.11264099999999999]}, 'stats': [2, 2, 0.030303999999999998, 0.363633], 'callers': {'profiling.py:14(avrg)': [2, 2, 0.030303999999999998, 0.363633]}, 'display_name': 'profiling.py:17(sumerino_1)'}, 'profiling.py:47(sumerino_2)': {'children': {"~:0(<method 'replace' of 'str' objects>)": [10000, 10000, 0.001371, 0.001371], '~:0(<built-in method builtins.len>)': [1, 1, 1e-06, 1e-06], '/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': [10000, 10000, 0.007043, 0.056052], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [30000, 30000, 0.020694999999999998, 0.155772], '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': [10000, 10000, 0.004723, 0.053001]}, 'stats': [1, 1, 0.022980999999999998, 0.289178], 'callers': {'profiling.py:46(bracket)': [1, 1, 0.022980999999999998, 0.289178]}, 'display_name': 'profiling.py:47(sumerino_2)'}, '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': {'children': {"~:0(<method 'replace' of 'str' objects>)": [110020, 110020, 0.013961, 0.013961], '~:0(<built-in method builtins.eval>)': [110020, 110020, 0.44536, 0.457441], '/home/rumls/Desktop/project2/mathematica.py:90(__str__)': [29997, 29997, 0.025169, 0.025169]}, 'stats': [110020, 110020, 0.077443, 0.574014], 'callers': {'/home/rumls/Desktop/project2/mathematica.py:47(root)': [1, 1, 1e-06, 6e-06], '/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': [10001, 10001, 0.006744, 0.049018], 'profiling.py:17(sumerino_1)': [40000, 40000, 0.028877, 0.21745099999999998], 'profiling.py:26(dividing_1)': [4, 4, 6e-06, 2.4999999999999998e-05], 'profiling.py:41(dividing_2)': [3, 3, 1e-06, 1.7e-05], 'profiling.py:47(sumerino_2)': [30000, 30000, 0.020694999999999998, 0.155772], 'profiling.py:55(mult_2)': [2, 2, 2e-06, 1.1e-05], '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': [30000, 30000, 0.021103, 0.15165099999999998], '/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': [2, 2, 1e-06, 1.2e-05], '/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [4, 4, 6e-06, 2.7e-05], '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': [3, 3, 7e-06, 2.4e-05]}, 'display_name': 'mathematica.py:5(__init__)'}, '~:0(<built-in method builtins.eval>)': {'children': {'<string>:1(<module>)': [1, 1, 0.0, 0.0]}, 'stats': [110020, 110020, 0.44536, 0.457441], 'callers': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [110020, 110020, 0.44536, 0.457441]}, 'display_name': '~:0(<built-in method builtins.eval>)'}, '~:0(<built-in method builtins.len>)': {'children': {}, 'stats': [3, 3, 1e-06, 1e-06], 'callers': {'profiling.py:17(sumerino_1)': [2, 2, 0.0, 0.0], 'profiling.py:47(sumerino_2)': [1, 1, 1e-06, 1e-06]}, 'display_name': '~:0(<built-in method builtins.len>)'}, '<string>:1(<module>)': {'children': {}, 'stats': [1, 1, 0.0, 0.0], 'callers': {'~:0(<built-in method builtins.eval>)': [1, 1, 0.0, 0.0]}, 'display_name': '<string>:1(<module>)'}, '/home/rumls/Desktop/project2/mathematica.py:90(__str__)': {'children': {}, 'stats': [29997, 29997, 0.025169, 0.025169], 'callers': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [29997, 29997, 0.025169, 0.025169]}, 'display_name': 'mathematica.py:90(__str__)'}, '/home/rumls/Desktop/project2/mathematica.py:47(root)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [1, 1, 1e-06, 6e-06]}, 'stats': [1, 1, 9.999999999999999e-06, 1.6e-05], 'callers': {'profiling.py:40(rootino)': [1, 1, 9.999999999999999e-06, 1.6e-05]}, 'display_name': 'mathematica.py:47(root)'}, 'profiling.py:40(rootino)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:47(root)': [1, 1, 9.999999999999999e-06, 1.6e-05], 'profiling.py:41(dividing_2)': [1, 1, 4.9999999999999996e-06, 3.6e-05], 'profiling.py:46(bracket)': [1, 1, 4e-06, 0.289232], 'profiling.py:67(mult_3)': [1, 1, 0.0, 8e-06]}, 'stats': [1, 1, 4.9999999999999996e-06, 0.28929699999999997], 'callers': {}, 'display_name': 'profiling.py:40(rootino)'}, '/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [10001, 10001, 0.006744, 0.049018]}, 'stats': [10001, 10001, 0.007052999999999999, 0.056070999999999996], 'callers': {'profiling.py:47(sumerino_2)': [10000, 10000, 0.007043, 0.056052], 'profiling.py:55(mult_2)': [1, 1, 9.999999999999999e-06, 1.8999999999999998e-05]}, 'display_name': 'mathematica.py:43(__pow__)'}, 'profiling.py:55(mult_2)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': [1, 1, 9.999999999999999e-06, 1.8999999999999998e-05], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [2, 2, 2e-06, 1.1e-05], '/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [1, 1, 1e-06, 7e-06]}, 'stats': [1, 1, 2e-06, 3.9e-05], 'callers': {'profiling.py:46(bracket)': [1, 1, 2e-06, 3.9e-05]}, 'display_name': 'profiling.py:55(mult_2)'}, 'profiling.py:14(avrg)': {'children': {'profiling.py:17(sumerino_1)': [2, 2, 0.030303999999999998, 0.363633], 'profiling.py:26(dividing_1)': [2, 2, 7e-06, 4.9e-05], 'profiling.py:32(mult_1)': [2, 2, 2e-06, 1.9999999999999998e-05]}, 'stats': [2, 2, 6e-06, 0.363708], 'callers': {}, 'display_name': 'profiling.py:14(avrg)'}, 'profiling.py:26(dividing_1)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [4, 4, 6e-06, 2.4999999999999998e-05], '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': [2, 2, 1e-06, 1.7e-05]}, 'stats': [2, 2, 7e-06, 4.9e-05], 'callers': {'profiling.py:14(avrg)': [2, 2, 7e-06, 4.9e-05]}, 'display_name': 'profiling.py:26(dividing_1)'}, 'profiling.py:32(mult_1)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [2, 2, 3e-06, 1.8e-05]}, 'stats': [2, 2, 2e-06, 1.9999999999999998e-05], 'callers': {'profiling.py:14(avrg)': [2, 2, 2e-06, 1.9999999999999998e-05]}, 'display_name': 'profiling.py:32(mult_1)'}, 'profiling.py:41(dividing_2)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [3, 3, 1e-06, 1.7e-05], '/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': [1, 1, 1e-06, 4.9999999999999996e-06], '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': [1, 1, 1e-06, 9e-06]}, 'stats': [1, 1, 4.9999999999999996e-06, 3.6e-05], 'callers': {'profiling.py:40(rootino)': [1, 1, 4.9999999999999996e-06, 3.6e-05]}, 'display_name': 'profiling.py:41(dividing_2)'}, 'profiling.py:46(bracket)': {'children': {'profiling.py:47(sumerino_2)': [1, 1, 0.022980999999999998, 0.289178], 'profiling.py:55(mult_2)': [1, 1, 2e-06, 3.9e-05], 'profiling.py:60(sub)': [1, 1, 0.0, 1.1e-05]}, 'stats': [1, 1, 4e-06, 0.289232], 'callers': {'profiling.py:40(rootino)': [1, 1, 4e-06, 0.289232]}, 'display_name': 'profiling.py:46(bracket)'}, 'profiling.py:60(sub)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': [1, 1, 3e-06, 1.1e-05]}, 'stats': [1, 1, 0.0, 1.1e-05], 'callers': {'profiling.py:46(bracket)': [1, 1, 0.0, 1.1e-05]}, 'display_name': 'profiling.py:60(sub)'}, 'profiling.py:67(mult_3)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [1, 1, 2e-06, 8e-06]}, 'stats': [1, 1, 0.0, 8e-06], 'callers': {'profiling.py:40(rootino)': [1, 1, 0.0, 8e-06]}, 'display_name': 'profiling.py:67(mult_3)'}, '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [30000, 30000, 0.021103, 0.15165099999999998]}, 'stats': [30000, 30000, 0.013991, 0.16564199999999998], 'callers': {'profiling.py:17(sumerino_1)': [20000, 20000, 0.009268, 0.11264099999999999], 'profiling.py:47(sumerino_2)': [10000, 10000, 0.004723, 0.053001]}, 'display_name': 'mathematica.py:19(__add__)'}, '/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [2, 2, 1e-06, 1.2e-05]}, 'stats': [2, 2, 4e-06, 1.6e-05], 'callers': {'profiling.py:41(dividing_2)': [1, 1, 1e-06, 4.9999999999999996e-06], 'profiling.py:60(sub)': [1, 1, 3e-06, 1.1e-05]}, 'display_name': 'mathematica.py:23(__sub__)'}, '/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [4, 4, 6e-06, 2.7e-05]}, 'stats': [4, 4, 6e-06, 3.2999999999999996e-05], 'callers': {'profiling.py:32(mult_1)': [2, 2, 3e-06, 1.8e-05], 'profiling.py:55(mult_2)': [1, 1, 1e-06, 7e-06], 'profiling.py:67(mult_3)': [1, 1, 2e-06, 8e-06]}, 'display_name': 'mathematica.py:27(__mul__)'}, '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [3, 3, 7e-06, 2.4e-05]}, 'stats': [3, 3, 2e-06, 2.6e-05], 'callers': {'profiling.py:26(dividing_1)': [2, 2, 1e-06, 1.7e-05], 'profiling.py:41(dividing_2)': [1, 1, 1e-06, 9e-06]}, 'display_name': 'mathematica.py:31(__truediv__)'}};
+function sv_build_hierarchy(
+node_name, depth, max_depth, cutoff, node_time, parent_name, call_stack) {
+// track visited functions so we can avoid infinitely displaying
+// instances of recursion
+if (_.isUndefined(call_stack)) {
+var call_stack = Immutable.Set([node_name])
+} else {
+var call_stack = call_stack.add(node_name);
+};
+var data = {
+name: node_name,
+display_name: stats[node_name]['display_name'],
+time: node_time,
+cumulative: stats[node_name]['stats'][3],
+parent_name: parent_name
+};
+if (depth < max_depth && !_.isEmpty(stats[node_name]['children'])) {
+child_names = {};
+for (var child_name in stats[node_name]['children']) {
+// Cut off children that have already been visited (recursion)
+if (!call_stack.contains(child_name)) {
+child_names[child_name] = stats[node_name]['children'][child_name];
+}
+}
+// Normalize the child times.
+// Unfortunately, stats[child_name]['callers'][node_name][3] doesn't
+// give us the time that child spend under node in this instance, but
+// in all instances across the call tree. Yikes!
+// This may lead to unexpected behavior, e.g., the child times add up
+// to more than the node time. A normalization is necessary.
+var child_times = {};
+var total_children_time = 0.0;
+for (var child_name in child_names) {
+child_times[child_name] = stats[child_name]['callers'][node_name][3];
+total_children_time += child_times[child_name];
+}
+if (total_children_time > node_time) {
+for (var child_name in child_names) {
+child_times[child_name] *= (node_time / total_children_time);
+}
+}
+data['children'] = [];
+// recurse
+for (var child_name in child_names) {
+if (child_times[child_name]/node_time > cutoff) {
+data['children'].push(
+sv_build_hierarchy(
+child_name, depth+1, max_depth, cutoff,
+child_times[child_name], node_name, call_stack
+));
+}
+}
+// D3, the plotting framework, only accounts for times in the leaf
+// nodes. Hence, if the node_time exceeds the total time in its
+// children, we need to add another child node to account for the the
+// time spent in node itself.
+if (total_children_time < node_time) {
+data['children'].push({
+name: node_name,
+display_name: data['display_name'],
+parent_name: data['parent_name'],
+cumulative: stats[node_name]['stats'][3],
+time: node_time - total_children_time
+});
+}
+}
+return data;
+}
+self.onmessage = function (event) {
+// Try loading JS from CDN in case snakeviz server is off
+try {
+importScripts(
+"https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.1/immutable.min.js",
+"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js");
+}
+// If the user is offline try loading from the SnakeViz server
+catch (e) {
+try {
+importScripts(
+event.data['url'] + "/static/vendor/immutable.min.js",
+event.data['url'] + "/static/vendor/lodash.min.js");
+}
+catch (e) {
+throw 'Could not load JS libraries in worker.';
+}
+}
+var depth = 0;
+var max_depth = event.data['depth'];
+var cutoff = event.data['cutoff'];
+var node_name = event.data['name'];
+var parent_name = event.data['parent_name'];
+var node_time = stats[node_name]['stats'][3];
+self.postMessage(JSON.stringify(
+sv_build_hierarchy(
+node_name, depth, max_depth, cutoff, node_time, parent_name
+)));
+};
+</script>
+<!-- Load SnakeViz JS Files -->
+<script src="profiling-v1_files/snakeviz.js"></script>
+<script src="profiling-v1_files/drawsvg.js"></script>
+<!-- Do initial setup stuff -->
+<script>
+// Initialize data
+$(document).ready(_.defer(function () {
+var profile_data = {"~:0(<method 'replace' of 'str' objects>)": {'children': {}, 'stats': [140020, 140020, 0.018569, 0.018569], 'callers': {'profiling.py:17(sumerino_1)': [20000, 20000, 0.003237, 0.003237], 'profiling.py:47(sumerino_2)': [10000, 10000, 0.001371, 0.001371], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [110020, 110020, 0.013961, 0.013961]}, 'display_name': "~:0(<method 'replace' of 'str' objects>)"}, 'profiling.py:17(sumerino_1)': {'children': {"~:0(<method 'replace' of 'str' objects>)": [20000, 20000, 0.003237, 0.003237], '~:0(<built-in method builtins.len>)': [2, 2, 0.0, 0.0], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [40000, 40000, 0.028877, 0.21745099999999998], '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': [20000, 20000, 0.009268, 0.11264099999999999]}, 'stats': [2, 2, 0.030303999999999998, 0.363633], 'callers': {'profiling.py:14(avrg)': [2, 2, 0.030303999999999998, 0.363633]}, 'display_name': 'profiling.py:17(sumerino_1)'}, 'profiling.py:47(sumerino_2)': {'children': {"~:0(<method 'replace' of 'str' objects>)": [10000, 10000, 0.001371, 0.001371], '~:0(<built-in method builtins.len>)': [1, 1, 1e-06, 1e-06], '/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': [10000, 10000, 0.007043, 0.056052], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [30000, 30000, 0.020694999999999998, 0.155772], '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': [10000, 10000, 0.004723, 0.053001]}, 'stats': [1, 1, 0.022980999999999998, 0.289178], 'callers': {'profiling.py:46(bracket)': [1, 1, 0.022980999999999998, 0.289178]}, 'display_name': 'profiling.py:47(sumerino_2)'}, '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': {'children': {"~:0(<method 'replace' of 'str' objects>)": [110020, 110020, 0.013961, 0.013961], '~:0(<built-in method builtins.eval>)': [110020, 110020, 0.44536, 0.457441], '/home/rumls/Desktop/project2/mathematica.py:90(__str__)': [29997, 29997, 0.025169, 0.025169]}, 'stats': [110020, 110020, 0.077443, 0.574014], 'callers': {'/home/rumls/Desktop/project2/mathematica.py:47(root)': [1, 1, 1e-06, 6e-06], '/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': [10001, 10001, 0.006744, 0.049018], 'profiling.py:17(sumerino_1)': [40000, 40000, 0.028877, 0.21745099999999998], 'profiling.py:26(dividing_1)': [4, 4, 6e-06, 2.4999999999999998e-05], 'profiling.py:41(dividing_2)': [3, 3, 1e-06, 1.7e-05], 'profiling.py:47(sumerino_2)': [30000, 30000, 0.020694999999999998, 0.155772], 'profiling.py:55(mult_2)': [2, 2, 2e-06, 1.1e-05], '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': [30000, 30000, 0.021103, 0.15165099999999998], '/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': [2, 2, 1e-06, 1.2e-05], '/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [4, 4, 6e-06, 2.7e-05], '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': [3, 3, 7e-06, 2.4e-05]}, 'display_name': 'mathematica.py:5(__init__)'}, '~:0(<built-in method builtins.eval>)': {'children': {'<string>:1(<module>)': [1, 1, 0.0, 0.0]}, 'stats': [110020, 110020, 0.44536, 0.457441], 'callers': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [110020, 110020, 0.44536, 0.457441]}, 'display_name': '~:0(<built-in method builtins.eval>)'}, '~:0(<built-in method builtins.len>)': {'children': {}, 'stats': [3, 3, 1e-06, 1e-06], 'callers': {'profiling.py:17(sumerino_1)': [2, 2, 0.0, 0.0], 'profiling.py:47(sumerino_2)': [1, 1, 1e-06, 1e-06]}, 'display_name': '~:0(<built-in method builtins.len>)'}, '<string>:1(<module>)': {'children': {}, 'stats': [1, 1, 0.0, 0.0], 'callers': {'~:0(<built-in method builtins.eval>)': [1, 1, 0.0, 0.0]}, 'display_name': '<string>:1(<module>)'}, '/home/rumls/Desktop/project2/mathematica.py:90(__str__)': {'children': {}, 'stats': [29997, 29997, 0.025169, 0.025169], 'callers': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [29997, 29997, 0.025169, 0.025169]}, 'display_name': 'mathematica.py:90(__str__)'}, '/home/rumls/Desktop/project2/mathematica.py:47(root)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [1, 1, 1e-06, 6e-06]}, 'stats': [1, 1, 9.999999999999999e-06, 1.6e-05], 'callers': {'profiling.py:40(rootino)': [1, 1, 9.999999999999999e-06, 1.6e-05]}, 'display_name': 'mathematica.py:47(root)'}, 'profiling.py:40(rootino)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:47(root)': [1, 1, 9.999999999999999e-06, 1.6e-05], 'profiling.py:41(dividing_2)': [1, 1, 4.9999999999999996e-06, 3.6e-05], 'profiling.py:46(bracket)': [1, 1, 4e-06, 0.289232], 'profiling.py:67(mult_3)': [1, 1, 0.0, 8e-06]}, 'stats': [1, 1, 4.9999999999999996e-06, 0.28929699999999997], 'callers': {}, 'display_name': 'profiling.py:40(rootino)'}, '/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [10001, 10001, 0.006744, 0.049018]}, 'stats': [10001, 10001, 0.007052999999999999, 0.056070999999999996], 'callers': {'profiling.py:47(sumerino_2)': [10000, 10000, 0.007043, 0.056052], 'profiling.py:55(mult_2)': [1, 1, 9.999999999999999e-06, 1.8999999999999998e-05]}, 'display_name': 'mathematica.py:43(__pow__)'}, 'profiling.py:55(mult_2)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:43(__pow__)': [1, 1, 9.999999999999999e-06, 1.8999999999999998e-05], '/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [2, 2, 2e-06, 1.1e-05], '/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [1, 1, 1e-06, 7e-06]}, 'stats': [1, 1, 2e-06, 3.9e-05], 'callers': {'profiling.py:46(bracket)': [1, 1, 2e-06, 3.9e-05]}, 'display_name': 'profiling.py:55(mult_2)'}, 'profiling.py:14(avrg)': {'children': {'profiling.py:17(sumerino_1)': [2, 2, 0.030303999999999998, 0.363633], 'profiling.py:26(dividing_1)': [2, 2, 7e-06, 4.9e-05], 'profiling.py:32(mult_1)': [2, 2, 2e-06, 1.9999999999999998e-05]}, 'stats': [2, 2, 6e-06, 0.363708], 'callers': {}, 'display_name': 'profiling.py:14(avrg)'}, 'profiling.py:26(dividing_1)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [4, 4, 6e-06, 2.4999999999999998e-05], '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': [2, 2, 1e-06, 1.7e-05]}, 'stats': [2, 2, 7e-06, 4.9e-05], 'callers': {'profiling.py:14(avrg)': [2, 2, 7e-06, 4.9e-05]}, 'display_name': 'profiling.py:26(dividing_1)'}, 'profiling.py:32(mult_1)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [2, 2, 3e-06, 1.8e-05]}, 'stats': [2, 2, 2e-06, 1.9999999999999998e-05], 'callers': {'profiling.py:14(avrg)': [2, 2, 2e-06, 1.9999999999999998e-05]}, 'display_name': 'profiling.py:32(mult_1)'}, 'profiling.py:41(dividing_2)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [3, 3, 1e-06, 1.7e-05], '/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': [1, 1, 1e-06, 4.9999999999999996e-06], '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': [1, 1, 1e-06, 9e-06]}, 'stats': [1, 1, 4.9999999999999996e-06, 3.6e-05], 'callers': {'profiling.py:40(rootino)': [1, 1, 4.9999999999999996e-06, 3.6e-05]}, 'display_name': 'profiling.py:41(dividing_2)'}, 'profiling.py:46(bracket)': {'children': {'profiling.py:47(sumerino_2)': [1, 1, 0.022980999999999998, 0.289178], 'profiling.py:55(mult_2)': [1, 1, 2e-06, 3.9e-05], 'profiling.py:60(sub)': [1, 1, 0.0, 1.1e-05]}, 'stats': [1, 1, 4e-06, 0.289232], 'callers': {'profiling.py:40(rootino)': [1, 1, 4e-06, 0.289232]}, 'display_name': 'profiling.py:46(bracket)'}, 'profiling.py:60(sub)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': [1, 1, 3e-06, 1.1e-05]}, 'stats': [1, 1, 0.0, 1.1e-05], 'callers': {'profiling.py:46(bracket)': [1, 1, 0.0, 1.1e-05]}, 'display_name': 'profiling.py:60(sub)'}, 'profiling.py:67(mult_3)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': [1, 1, 2e-06, 8e-06]}, 'stats': [1, 1, 0.0, 8e-06], 'callers': {'profiling.py:40(rootino)': [1, 1, 0.0, 8e-06]}, 'display_name': 'profiling.py:67(mult_3)'}, '/home/rumls/Desktop/project2/mathematica.py:19(__add__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [30000, 30000, 0.021103, 0.15165099999999998]}, 'stats': [30000, 30000, 0.013991, 0.16564199999999998], 'callers': {'profiling.py:17(sumerino_1)': [20000, 20000, 0.009268, 0.11264099999999999], 'profiling.py:47(sumerino_2)': [10000, 10000, 0.004723, 0.053001]}, 'display_name': 'mathematica.py:19(__add__)'}, '/home/rumls/Desktop/project2/mathematica.py:23(__sub__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [2, 2, 1e-06, 1.2e-05]}, 'stats': [2, 2, 4e-06, 1.6e-05], 'callers': {'profiling.py:41(dividing_2)': [1, 1, 1e-06, 4.9999999999999996e-06], 'profiling.py:60(sub)': [1, 1, 3e-06, 1.1e-05]}, 'display_name': 'mathematica.py:23(__sub__)'}, '/home/rumls/Desktop/project2/mathematica.py:27(__mul__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [4, 4, 6e-06, 2.7e-05]}, 'stats': [4, 4, 6e-06, 3.2999999999999996e-05], 'callers': {'profiling.py:32(mult_1)': [2, 2, 3e-06, 1.8e-05], 'profiling.py:55(mult_2)': [1, 1, 1e-06, 7e-06], 'profiling.py:67(mult_3)': [1, 1, 2e-06, 8e-06]}, 'display_name': 'mathematica.py:27(__mul__)'}, '/home/rumls/Desktop/project2/mathematica.py:31(__truediv__)': {'children': {'/home/rumls/Desktop/project2/mathematica.py:5(__init__)': [3, 3, 7e-06, 2.4e-05]}, 'stats': [3, 3, 2e-06, 2.6e-05], 'callers': {'profiling.py:26(dividing_1)': [2, 2, 1e-06, 1.7e-05], 'profiling.py:41(dividing_2)': [1, 1, 1e-06, 9e-06]}, 'display_name': 'mathematica.py:31(__truediv__)'}};
+sv_json_cache = {};
+sv_worker = sv_make_worker();
+sv_root_func_name = sv_find_root(profile_data);
+sv_root_func_name__cached = sv_root_func_name;
+sv_call_stack = [sv_root_func_name];
+sv_total_time = profile_data[sv_root_func_name]['stats'][3];
+}));
+// Initialize the call stack button
+$(document).ready(_.defer(function () {
+sv_update_call_stack_list();
+sv_call_stack_btn_for_show();
+}));
+// Draw the visualization
+$(document).ready(_.defer(function () {
+sv_draw_vis(sv_root_func_name);
+}));
+</script>
+
+
+</body></html>
