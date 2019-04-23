@@ -69,8 +69,7 @@ class Math:
             if n != 0:
                 tmp = self.val ** (1/n)
             else:
-                return "Math Error" ####
-                #raise ZeroDivisionError
+                return "Math Error"
 
         return Math(tmp)
 

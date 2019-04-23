@@ -882,16 +882,19 @@ class Ui_Advanced(object):
             values = []
             overwrite_flag = 0
         
-        if log_flag is 1 or root_flag is 1:
-            if log_flag is 1:
-                number.append(x)
-                num = ''.join(number)
-                self.lineEdit.setText("log("+str(num)+", "+str(values)+")")
+        if log_flag == 1 or root_flag == 1:
 
-            if root_flag is 1:
-                number.append(x)
-                num = ''.join(number)
-                self.lineEdit.setText(str(num)+"√"+str(values))
+            if x != "(" and x != ")":
+
+                if log_flag is 1:
+                    number.append(x)
+                    num = ''.join(number)
+                    self.lineEdit.setText("log("+str(num)+", "+str(values)+")")
+
+                if root_flag is 1:
+                    number.append(x)
+                    num = ''.join(number)
+                    self.lineEdit.setText(str(num)+"√"+str(values))
             
         else: # len 1 bodka
             if x == "." and "." in number:
@@ -923,11 +926,12 @@ class Ui_Advanced(object):
         overwrite_flag = 0
 
         if log_flag == 1 or root_flag == 1:
-            number.append(x)
-            if log_flag == 1:
-                self.lineEdit.setText("log("+str(''.join(number))+", "+str(values)+")")
-            else:
-                self.lineEdit.setText(''.join(number)+self.lineEdit.text())
+            if x == "-":
+                number.append(x)
+                if log_flag == 1:
+                    self.lineEdit.setText("log("+str(''.join(number))+", "+str(values)+")")
+                else:
+                    self.lineEdit.setText(''.join(number)+self.lineEdit.text())
 
         else:
             if number:
@@ -980,7 +984,7 @@ class Ui_Advanced(object):
         else:
             print(values, number)
 
-            expr = ''.join(values+number)#self.lineEdit.text()
+            expr = ''.join(values+number)
             print(expr)
 
             result = Math(expr)
