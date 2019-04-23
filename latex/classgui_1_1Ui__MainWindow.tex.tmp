@@ -1,0 +1,135 @@
+\hypertarget{classgui_1_1Ui__MainWindow}{}\section{gui.\+Ui\+\_\+\+Main\+Window Class Reference}
+\label{classgui_1_1Ui__MainWindow}\index{gui.\+Ui\+\_\+\+Main\+Window@{gui.\+Ui\+\_\+\+Main\+Window}}
+
+
+Inheritance diagram for gui.\+Ui\+\_\+\+Main\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for gui.\+Ui\+\_\+\+Main\+Window\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a867f93f0a093d0dcf89b03e5da518fb1}\label{classgui_1_1Ui__MainWindow_a867f93f0a093d0dcf89b03e5da518fb1}} 
+def {\bfseries setup\+Ui} (self, Main\+Window)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a3729035768c1e902ed0701e802bb83c4}\label{classgui_1_1Ui__MainWindow_a3729035768c1e902ed0701e802bb83c4}} 
+def {\bfseries factorial} (self)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a15c1d356e8d00aebcfd5e0502fecaed2}\label{classgui_1_1Ui__MainWindow_a15c1d356e8d00aebcfd5e0502fecaed2}} 
+def {\bfseries ln} (self)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_ab7a9e07ecaf2ba239e490804a83345fb}\label{classgui_1_1Ui__MainWindow_ab7a9e07ecaf2ba239e490804a83345fb}} 
+def {\bfseries log} (self)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a21c9d2547a2bfb4aeabf18e76c5d075a}\label{classgui_1_1Ui__MainWindow_a21c9d2547a2bfb4aeabf18e76c5d075a}} 
+def {\bfseries numbers} (self, x)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a46fb6a00a0f7742fdf7b00c78e0401b2}\label{classgui_1_1Ui__MainWindow_a46fb6a00a0f7742fdf7b00c78e0401b2}} 
+def {\bfseries operand} (self, x)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a61253c91c0bdd82886de9b0923e7fe49}\label{classgui_1_1Ui__MainWindow_a61253c91c0bdd82886de9b0923e7fe49}} 
+def {\bfseries evaluate} (self)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a4af9c5be635f77d90e2a893fe2b662c3}\label{classgui_1_1Ui__MainWindow_a4af9c5be635f77d90e2a893fe2b662c3}} 
+def {\bfseries clear} (self)
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a3f3029b461c00ee73d6474c32414dcce}\label{classgui_1_1Ui__MainWindow_a3f3029b461c00ee73d6474c32414dcce}} 
+def {\bfseries retranslate\+Ui} (self, Main\+Window)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_ac900ad92ffecd9461283d42ed0bdb934}\label{classgui_1_1Ui__MainWindow_ac900ad92ffecd9461283d42ed0bdb934}} 
+{\bfseries centralwidget}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_aa0db9551b8e1ff1e0a429beaebda7d7e}\label{classgui_1_1Ui__MainWindow_aa0db9551b8e1ff1e0a429beaebda7d7e}} 
+{\bfseries push\+Button\+\_\+07}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_aa1a94f6b3f5f695965f9a9c6e351cab3}\label{classgui_1_1Ui__MainWindow_aa1a94f6b3f5f695965f9a9c6e351cab3}} 
+{\bfseries push\+Button\+\_\+08}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_ad7d0535b6f56f64487f37b6f96cf72fe}\label{classgui_1_1Ui__MainWindow_ad7d0535b6f56f64487f37b6f96cf72fe}} 
+{\bfseries push\+Button\+\_\+09}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_ac3aedaa6f7a15f7ed38b0f1a647a39ff}\label{classgui_1_1Ui__MainWindow_ac3aedaa6f7a15f7ed38b0f1a647a39ff}} 
+{\bfseries push\+Button\+\_\+06}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a5efd89090fc29f3999bb4a9ca6f7166b}\label{classgui_1_1Ui__MainWindow_a5efd89090fc29f3999bb4a9ca6f7166b}} 
+{\bfseries push\+Button\+\_\+05}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a8e411b67be70d1ba73b48346e4d63176}\label{classgui_1_1Ui__MainWindow_a8e411b67be70d1ba73b48346e4d63176}} 
+{\bfseries push\+Button\+\_\+04}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a26446502db8f5804390a2ba7bcee6656}\label{classgui_1_1Ui__MainWindow_a26446502db8f5804390a2ba7bcee6656}} 
+{\bfseries push\+Button\+\_\+01}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a31ab1e49a689c8783b8582218fe7970d}\label{classgui_1_1Ui__MainWindow_a31ab1e49a689c8783b8582218fe7970d}} 
+{\bfseries push\+Button\+\_\+02}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a6d6c7f6e2722b31df152a37498fcd215}\label{classgui_1_1Ui__MainWindow_a6d6c7f6e2722b31df152a37498fcd215}} 
+{\bfseries push\+Button\+\_\+03}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a8c5a758c0903c6e4869babd138205094}\label{classgui_1_1Ui__MainWindow_a8c5a758c0903c6e4869babd138205094}} 
+{\bfseries push\+Button\+\_\+10}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a24623b1af2d40d9a986c0b935ae6f30f}\label{classgui_1_1Ui__MainWindow_a24623b1af2d40d9a986c0b935ae6f30f}} 
+{\bfseries push\+Button\+\_\+12}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a6bb5dd634dcc35fb1450830d34e9caf2}\label{classgui_1_1Ui__MainWindow_a6bb5dd634dcc35fb1450830d34e9caf2}} 
+{\bfseries push\+Button\+\_\+11}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_ae733f9de2a85a040198f784160603794}\label{classgui_1_1Ui__MainWindow_ae733f9de2a85a040198f784160603794}} 
+{\bfseries push\+Button\+\_\+13}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a59448f37171817cf5a3cda46e0a93df3}\label{classgui_1_1Ui__MainWindow_a59448f37171817cf5a3cda46e0a93df3}} 
+{\bfseries push\+Button\+\_\+14}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_aa4d58d6aa61acfdc22fab79159ed48ea}\label{classgui_1_1Ui__MainWindow_aa4d58d6aa61acfdc22fab79159ed48ea}} 
+{\bfseries push\+Button\+\_\+15}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a502173db01b6a238e9ace7cb7bb7e0f3}\label{classgui_1_1Ui__MainWindow_a502173db01b6a238e9ace7cb7bb7e0f3}} 
+{\bfseries push\+Button\+\_\+16}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_acb3501c68bbb868143ed386582dac917}\label{classgui_1_1Ui__MainWindow_acb3501c68bbb868143ed386582dac917}} 
+{\bfseries push\+Button\+\_\+17}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a55b872c0ec0cb1eaa5db71e5ca3592c8}\label{classgui_1_1Ui__MainWindow_a55b872c0ec0cb1eaa5db71e5ca3592c8}} 
+{\bfseries line\+Edit}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a36643db84055a01ee0fccecbeb4e6451}\label{classgui_1_1Ui__MainWindow_a36643db84055a01ee0fccecbeb4e6451}} 
+{\bfseries push\+Button\+\_\+21}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_aff5ed35f290d19ff542b7e9f6f4e48c4}\label{classgui_1_1Ui__MainWindow_aff5ed35f290d19ff542b7e9f6f4e48c4}} 
+{\bfseries push\+Button\+\_\+22}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_ac9b36ae9acfb56b7ce38b7eb3cbeeda9}\label{classgui_1_1Ui__MainWindow_ac9b36ae9acfb56b7ce38b7eb3cbeeda9}} 
+{\bfseries push\+Button\+\_\+20}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_ac5a9e6f4a93b7de3d86293d86f069d23}\label{classgui_1_1Ui__MainWindow_ac5a9e6f4a93b7de3d86293d86f069d23}} 
+{\bfseries push\+Button\+\_\+18}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_acca5cabbccc20900af39b029a4e1360e}\label{classgui_1_1Ui__MainWindow_acca5cabbccc20900af39b029a4e1360e}} 
+{\bfseries push\+Button\+\_\+19}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a569cc7e806577657e55ac9eb75edd60e}\label{classgui_1_1Ui__MainWindow_a569cc7e806577657e55ac9eb75edd60e}} 
+{\bfseries menubar}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_af488fedd61a3411fb5c545cce5d99bfb}\label{classgui_1_1Ui__MainWindow_af488fedd61a3411fb5c545cce5d99bfb}} 
+{\bfseries menu\+Mode}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a4525135b2eb087253ef2fd7b70cdc4f9}\label{classgui_1_1Ui__MainWindow_a4525135b2eb087253ef2fd7b70cdc4f9}} 
+{\bfseries menu\+Help}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_aca726e29526db2a81f95074ee28cf647}\label{classgui_1_1Ui__MainWindow_aca726e29526db2a81f95074ee28cf647}} 
+{\bfseries action\+Basic}
+\item 
+\mbox{\Hypertarget{classgui_1_1Ui__MainWindow_a219898919d3861a6dd5f0acaa1188968}\label{classgui_1_1Ui__MainWindow_a219898919d3861a6dd5f0acaa1188968}} 
+{\bfseries action\+User\+\_\+\+Manual}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+gui.\+py\end{DoxyCompactItemize}

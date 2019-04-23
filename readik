@@ -1,0 +1,55 @@
+#!/bin/bash
+ARG="$1"
+if [ -f "$ARG" ]
+then
+:
+else
+    if [ "$ARG" == "msg" ]
+    then
+    shift
+    else
+    echo "Wrong or no argument. Correct format: ./readik [msg] Filename [Filename2]..." 
+    exit 1
+    fi
+fi
+
+#LOADING FILE AND CHECKING IF ARGUMENT IS FILE
+FILE="$1"
+if [ -f "$FILE" ]
+then
+:
+else
+    if [ -z "$FILE" ]
+    then
+    echo "Correct format: ./readik [msg] Filename [Filename2]..."
+    else
+    echo "File not found. Correct format: ./readik [msg] Filename [Filename2]..."
+    exit 1
+    fi
+fi
+
+#LOADING FILES
+while true
+do
+    FILE="$1"
+    if [ -f "$FILE" ]
+    then
+    LOG="$LOG $(cat "$FILE")"
+    shift
+    else
+    break;
+    fi
+done
+
+if [ "$ARG" == msg ]
+then
+WRITE=$( echo "$LOG" | while read -r LINE; do
+        if echo "$LINE" | grep -Exq '^.*MESSAGE.*$'
+        then
+        echo "$LINE"
+        fi
+        done )
+echo "$WRITE"
+else
+echo "$LOG"
+fi

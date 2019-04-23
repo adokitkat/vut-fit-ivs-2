@@ -1,0 +1,69 @@
+\subsection*{Info}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor odio metus, et tincidunt enim viverra et. Donec egestas pellentesque neque sit amet lobortis. Nulla facilisi. Etiam ultrices molestie mauris. Vestibulum dignissim augue sit amet nisi efficitur, a gravida lorem tincidunt.
+
+\subsection*{Practicies}
+
+\subsubsection*{Branches\+:}
+
+{\bfseries master} -\/ branch pre finálne verzie bez bugov {\bfseries develop} -\/ branch pre development, najviac sa bude pracovať tu {\bfseries feature\+\_\+$\ast$} -\/ branche pre nové features, ktoré keď budú dokončené budú pushnuté do develop
+
+\subsection*{Prerequisities}
+
+\subsubsection*{Vypni blbý githubovský email check}
+
+
+
+\#\#\# Linux (Debian-\/based, e.\+g. Ubuntu) 
+\begin{DoxyCode}
+sudo apt-get install python3
+\end{DoxyCode}
+ \subsubsection*{Windows}
+
+\href{https://www.python.org/downloads/}{\tt Download Python3} \subsection*{Basics}
+
+\subsubsection*{Getting repository}
+
+{\bfseries Over S\+SH\+:} 
+\begin{DoxyCode}
+git clone git@github.com:adokitkat/IVS\_project2.git
+\end{DoxyCode}
+ {\bfseries Over H\+T\+T\+PS\+:} {\itshape recommended} 
+\begin{DoxyCode}
+git clone https://github.com/adokitkat/IVS\_project2.git
+\end{DoxyCode}
+ \subsubsection*{Working with repo}
+
+{\bfseries !!!} Switch to {\bfseries develop} branch\+: {\bfseries !!!} 
+\begin{DoxyCode}
+git checkout develop
+\end{DoxyCode}
+ \#\#\# Working on a new feature 
+\begin{DoxyCode}
+git branch feature\_[name of feature]    // creates a new branch
+git checkout feature\_[name of feature]
+\end{DoxyCode}
+
+
+\subsection*{From this point do everytime}
+
+Update working history\+: 
+\begin{DoxyCode}
+git fetch
+\end{DoxyCode}
+ If changes have been made\+: 
+\begin{DoxyCode}
+git pull
+\end{DoxyCode}
+ \#\#\# After making changes in files -\/$>$ uploading 
+\begin{DoxyCode}
+git add .                                           // adds all new files
+git commit -m"[descriptive message of the change]"
+git push                                            // pushes everything from your local files to this
+       branch
+\end{DoxyCode}
+
+
+\subsection*{Cheat-\/sheet pre neveriacich Tomášov}
+
+\href{https://services.github.com/on-demand/downloads/github-git-cheat-sheet/}{\tt https\+://services.\+github.\+com/on-\/demand/downloads/github-\/git-\/cheat-\/sheet/} 
