@@ -147,7 +147,7 @@ class Ui_Basic(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.lineEdit.setText("")
-        self.lineEdit.setMaxLength(13)
+        self.lineEdit.setMaxLength(50)###13)
         self.lineEdit.setCursorPosition(0)
         self.lineEdit.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lineEdit.setReadOnly(True)
@@ -179,14 +179,11 @@ class Ui_Basic(object):
         font.setFamily("Ubuntu")
         self.actionUser_Manual.setFont(font)
         self.actionUser_Manual.setObjectName("actionUser_Manual")
-        self.actionAbout = QtWidgets.QAction(MainWindow)
-        self.actionAbout.setObjectName("actionAbout")
         self.actionAdvanced = QtWidgets.QAction(MainWindow)
         self.actionAdvanced.setObjectName("actionAdvanced")
         self.menuMode.addAction(self.actionBasic)
         self.menuMode.addAction(self.actionAdvanced)
         self.menuHelp.addAction(self.actionUser_Manual)
-        self.menuHelp.addAction(self.actionAbout)
         self.menubar.addAction(self.menuMode.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
 
@@ -235,7 +232,6 @@ class Ui_Basic(object):
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionBasic.setText(_translate("MainWindow", "Basic"))
         self.actionUser_Manual.setText(_translate("MainWindow", "User Manual"))
-        self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actionAdvanced.setText(_translate("MainWindow", "Advanced"))
 
         #################################################################################
@@ -262,7 +258,6 @@ class Ui_Basic(object):
         self.pushButton_28.clicked.connect(self.back)
 
         self.actionAdvanced.triggered.connect(self.change_ui)
-        self.actionAbout.triggered.connect(self.about)
 
         self.init()
 
@@ -273,6 +268,8 @@ class Ui_Basic(object):
 
         self.lineEdit.setText(''.join(values+number))
         overwrite_flag = 1
+
+        self.fit()
 
     def back(self):
         global values, number
@@ -288,6 +285,7 @@ class Ui_Basic(object):
             values = ["0"]
             self.lineEdit.setText(''.join(values+number))
 
+        self.fit()
 
     def sqroot(self):
         global values, number, overwrite_flag
@@ -298,6 +296,8 @@ class Ui_Basic(object):
         values = [str(result)]
         overwrite_flag = 1
 
+        self.fit()
+
     def root(self):
         global values, number, overwrite_flag, root_flag
 
@@ -306,6 +306,8 @@ class Ui_Basic(object):
         values = self.lineEdit.text()
         self.lineEdit.setText("√"+str(values))
         number = []
+
+        self.fit()
 
     def ln(self):
         global values, number, overwrite_flag
@@ -316,6 +318,8 @@ class Ui_Basic(object):
         values = [str(result)]
         overwrite_flag = 1
 
+        self.fit()
+
     def log(self):
         global values, number, overwrite_flag, log_flag
 
@@ -325,6 +329,8 @@ class Ui_Basic(object):
         self.lineEdit.setText("log(x, "+str(values)+")")
         number = []
 
+        self.fit()
+
     def factorial(self):
         global values, number, overwrite_flag
         
@@ -333,6 +339,8 @@ class Ui_Basic(object):
         number = []
         values = [str(result)]
         overwrite_flag = 1
+
+        self.fit()
 
     def numbers(self, x):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -367,7 +375,14 @@ class Ui_Basic(object):
                 pass
 
             num = ''.join(number)
+            
+            if len(num) > 40: 
+                number.pop()
+                num = ''.join(number)
+
             self.lineEdit.setText(''.join(values)+num)
+
+        self.fit()
     
     def operand(self, x):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -399,6 +414,8 @@ class Ui_Basic(object):
             values.append(x)
 
             self.lineEdit.setText(''.join(values))
+
+        self.fit()
 
     def evaluate(self):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -439,7 +456,7 @@ class Ui_Basic(object):
             values = [str(result)]
             number = []
 
-        self.lineEdit.setCursorPosition(0)
+        self.fit()
 
     def clear(self):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -451,6 +468,42 @@ class Ui_Basic(object):
         log_flag = 0
         root_flag = 0
         overwrite_flag = 1
+
+        self.fit()
+
+    def fit(self):
+
+        self.lineEdit.setCursorPosition(0)
+
+        size = 38
+        font = QtGui.QFont()
+        font.setPointSize(size)
+
+        if len(self.lineEdit.text()) > 13:
+            i = len(self.lineEdit.text()) - 13
+            j = 27
+
+            while i > 0 :
+                
+                if i > 6:
+                    
+                    if size < 28:                        
+                        
+                        if j % 4 == 0 :
+                            size += -1
+                        j += -1
+                    
+                    else:
+                        size += -1
+                        
+                else:
+                    size += -2
+
+                i += -1
+
+        font.setPointSize(size)
+        self.lineEdit.setFont(font)
+        self.lineEdit.show()
 
 class Ui_Advanced(object):
     
@@ -578,7 +631,7 @@ class Ui_Advanced(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.lineEdit.setText("")
-        self.lineEdit.setMaxLength(16)
+        self.lineEdit.setMaxLength(50)###19) ###
         self.lineEdit.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lineEdit.setReadOnly(True)
         self.lineEdit.setObjectName("lineEdit")
@@ -688,7 +741,6 @@ class Ui_Advanced(object):
         self.menuMode.addAction(self.actionBasic)
         self.menuMode.addAction(self.actionAdvanced)
         self.menuHelp.addAction(self.actionUser_Manual)
-        self.menuHelp.addAction(self.actionAbout)
         self.menubar.addAction(self.menuMode.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
 
@@ -757,7 +809,6 @@ class Ui_Advanced(object):
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionBasic.setText(_translate("MainWindow", "Basic"))
         self.actionUser_Manual.setText(_translate("MainWindow", "User Manual"))
-        self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actionAdvanced.setText(_translate("MainWindow", "Advanced"))
 
 #################################################################################
@@ -795,7 +846,6 @@ class Ui_Advanced(object):
         self.pushButton_28.clicked.connect(self.back)
 
         self.actionBasic.triggered.connect(self.change_ui)
-        self.actionAbout.triggered.connect(self.about)
 
         self.init()
 
@@ -806,6 +856,8 @@ class Ui_Advanced(object):
 
         self.lineEdit.setText(''.join(values+number))
         overwrite_flag = 1
+
+        self.fit()
 
     def back(self):
         global values, number
@@ -821,6 +873,8 @@ class Ui_Advanced(object):
             values = ["0"]
             self.lineEdit.setText(''.join(values+number))
 
+        self.fit()
+
 
     def sqroot(self):
         global values, number, overwrite_flag
@@ -831,6 +885,8 @@ class Ui_Advanced(object):
         values = [str(result)]
         overwrite_flag = 1
 
+        self.fit()
+
     def root(self):
         global values, number, overwrite_flag, root_flag
 
@@ -839,6 +895,8 @@ class Ui_Advanced(object):
         values = self.lineEdit.text()
         self.lineEdit.setText("√"+str(values))
         number = []
+
+        self.fit()
 
     def ln(self):
         global values, number, overwrite_flag
@@ -849,6 +907,8 @@ class Ui_Advanced(object):
         values = [str(result)]
         overwrite_flag = 1
 
+        self.fit()
+
     def log(self):
         global values, number, overwrite_flag, log_flag
 
@@ -858,6 +918,8 @@ class Ui_Advanced(object):
         self.lineEdit.setText("log(x, "+str(values)+")")
         number = []
 
+        self.fit()
+
     def factorial(self):
         global values, number, overwrite_flag
         
@@ -866,6 +928,8 @@ class Ui_Advanced(object):
         number = []
         values = [str(result)]
         overwrite_flag = 1
+
+        self.fit()
 
     def numbers(self, x):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -900,7 +964,14 @@ class Ui_Advanced(object):
                 pass
 
             num = ''.join(number)
+            
+            if len(num) > 40: 
+                number.pop()
+                num = ''.join(number)
+
             self.lineEdit.setText(''.join(values)+num)
+
+        self.fit()
     
     def operand(self, x):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -932,6 +1003,8 @@ class Ui_Advanced(object):
             values.append(x)
 
             self.lineEdit.setText(''.join(values))
+        
+        self.fit()
 
     def evaluate(self):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -962,8 +1035,10 @@ class Ui_Advanced(object):
 
         else:
             print(values, number)
-            expr = self.lineEdit.text()
+
+            expr = ''.join(values+number)#self.lineEdit.text()
             print(expr)
+
             result = Math(expr)
             self.lineEdit.setText(str(result))
             print(result)
@@ -972,7 +1047,8 @@ class Ui_Advanced(object):
             values = [str(result)]
             number = []
 
-        self.lineEdit.setCursorPosition(0)
+        self.fit()
+
 
     def clear(self):
         global values, number, overwrite_flag, log_flag, root_flag
@@ -985,37 +1061,44 @@ class Ui_Advanced(object):
         root_flag = 0
         overwrite_flag = 1
 
+        self.fit()
+
+    def fit(self):
+
+        self.lineEdit.setCursorPosition(0)
+
+        size = 38
+        font = QtGui.QFont()
+        font.setPointSize(size)
+
+        if len(self.lineEdit.text()) > 20:
+            i = len(self.lineEdit.text()) - 20
+            j = 22
+
+            while i > 0 :
+                
+                if i > 2:
+                    
+                    if size < 23:                        
+                        
+                        if j % 4 == 0 :
+                            size += -1
+                        j += -1
+                    
+                    else:
+                        size += -1
+                        
+                else:
+                    size += -2
+
+                i += -1
+
+            font.setPointSize(size)
+
+        self.lineEdit.setFont(font)
+        self.lineEdit.show()
+
 ######################################################################
-
-class About(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(350, 178)
-        self.textBrowser = QtWidgets.QTextBrowser(Dialog)
-        self.textBrowser.setGeometry(QtCore.QRect(-10, 0, 361, 181))
-        self.textBrowser.setObjectName("textBrowser")
-
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
-
-    def retranslateUi(self, Dialog):
-        _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "About"))
-        self.textBrowser.setHtml(_translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Noto Sans\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600;\">Created by:</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Adam Múdry  (xmudry01)</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Daniel Paul       (xpauld00)</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Jakub Mĺkvy     (xmlkvy00)</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Peter Koprda   (xkoprd00)</span></p></body></html>"))
-
-class DialogAbout(QDialog, About):
-    def __init__(self):
-        super(DialogAbout, self).__init__()
-        self.setupUi(self)
 
 class MainWindowBasic(QMainWindow, Ui_Basic):
     def __init__(self, parent=None):
@@ -1064,17 +1147,12 @@ class MainWindowBasic(QMainWindow, Ui_Basic):
         elif e.key() == Qt.Key_Delete:
             self.clear()
         elif e.key() == Qt.Key_Backspace:
-            self.clear()
+            self.back()
 
     def change_ui(self):
         w = MainWindowAdvanced()
         w.show()
-        self.close()
-
-    def about(self):
-        a = DialogAbout()
-        a.show()
-        
+        self.close()    
 
 class MainWindowAdvanced(QMainWindow, Ui_Advanced):
     def __init__(self, parent=None):
@@ -1123,15 +1201,10 @@ class MainWindowAdvanced(QMainWindow, Ui_Advanced):
         elif e.key() == Qt.Key_Delete:
             self.clear()
         elif e.key() == Qt.Key_Backspace:
-            self.clear()
+            self.back()
 
     def change_ui(self):
         w = MainWindowBasic()
         w.show()
         self.close()
 
-    def about(self):
-        a = DialogAbout()
-        a.show()
-        
-### TODO: About not working, fix it

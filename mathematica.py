@@ -21,8 +21,8 @@ class Math:
             if str(e) == "division by zero":
                 self.val = "Math Error"
             else:
+                print(e)
                 self.val = "Syntax Error"
-            #pass ##
 
     def __add__(self, other):
         tmp = self.val + other.val
@@ -108,6 +108,8 @@ class Math:
         try: # If float
             if value.is_integer():
                 value = int(value)
+                #if len(str(value)) > 19 :
+                #    return "Out of range" 
             else:
                 value = round(value, 15)
         except:
