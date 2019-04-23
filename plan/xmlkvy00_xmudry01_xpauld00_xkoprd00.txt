@@ -1,0 +1,10 @@
+Doplnkové informácie
+ 
+Komunikačné kanály: Discord, Messenger
+
+Systém pre správu verzií: GIT
+
+Hosting: github
+
+Link: https://github.com/adokitkat/IVS_project2
+Vyučujúci môžu do repozitára nahliadať cez účet: ivs.kontrola@gmail.com
