@@ -1130,3 +1130,4 @@ class MainWindowAdvanced(QMainWindow, Ui_Advanced):
         a = DialogAbout()
         a.show()
         
+### TODO: About not working, fix it
