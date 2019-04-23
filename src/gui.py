@@ -184,7 +184,6 @@ class Ui_Basic(object):
         self.menuMode.addAction(self.actionAdvanced)
         self.menuHelp.addAction(self.actionUser_Manual)
         self.menubar.addAction(self.menuMode.menuAction())
-        self.menubar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -686,7 +685,6 @@ class Ui_Advanced(object):
         self.menuMode.addAction(self.actionAdvanced)
         self.menuHelp.addAction(self.actionUser_Manual)
         self.menubar.addAction(self.menuMode.menuAction())
-        self.menubar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
