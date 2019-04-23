@@ -439,6 +439,8 @@ class Ui_Basic(object):
             values = [str(result)]
             number = []
 
+        self.lineEdit.setCursorPosition(0)
+
     def clear(self):
         global values, number, overwrite_flag, log_flag, root_flag
         
@@ -969,6 +971,8 @@ class Ui_Advanced(object):
             overwrite_flag = 1
             values = [str(result)]
             number = []
+
+        self.lineEdit.setCursorPosition(0)
 
     def clear(self):
         global values, number, overwrite_flag, log_flag, root_flag
