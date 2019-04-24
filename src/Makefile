@@ -24,7 +24,7 @@ init:
 	pip3 freeze
 
 #zabalí projekt tak, aby mohol byť odovzdaný
-pack: installer clean
+pack: doc installer clean
 	mkdir -p ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
 
 	cp -r ../* ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
@@ -51,7 +51,7 @@ doc: Doxyfile
 	mkdir ../doc
 	doxygen $(MATH_LIB)
 	mv html/ ../doc
-	mv latex/ ../doc
+	rm -rf latex/
 
 #spustí program
 run:$(MAIN)
