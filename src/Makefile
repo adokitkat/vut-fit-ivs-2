@@ -27,7 +27,7 @@ init:
 pack: doc installer clean
 	mkdir -p ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
 
-	cp -r ../* ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
+	cp -r ../ ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
 	cp -r ../installer ../../xmlkvy00_xmudry01_xpauld00_xkoprd00
 	cp -r ../doc ../../xmlkvy00_xmudry01_xpauld00_xkoprd00
 
