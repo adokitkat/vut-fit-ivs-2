@@ -14,6 +14,7 @@ ZIP_FILE=xmlkvy00_xmudry01_xpauld00_xkoprd00
 	doc
 	run
 	profile
+	installer
 
 #preloží projekt a program pre profiling
 all: init run	
@@ -33,8 +34,7 @@ pack: installer clean
 	rm -rf ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo/installer
 	rm -rf ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo/doc
 
-	cd ../../xmlkvy00_xmudry01_xpauld00_xkoprd00
-	zip -r $(ZIP_FILE).zip *
+	cd ../../ && zip -r $(ZIP_FILE).zip xmlkvy00_xmudry01_xpauld00_xkoprd00/
 
 #vyčistí nepotrebné súbory
 clean:
@@ -46,9 +46,9 @@ test:$(MATH_TESTS)
 
 #generovanie dokumentácie pre matematickú knižnicu
 doc: Doxyfile
-	cd .. && rm -rf doc
-	cd .. && mkdir doc
-	cd doc && doxygen ../src/$^
+	rm -rf ../doc
+	mkdir ../doc
+	cd ../doc && doxygen ../src/$(MATH_LIB)
 
 #spustí program
 run:$(MAIN)
