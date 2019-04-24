@@ -7,5 +7,5 @@ mkdir -p ../installer/usr/local/bin 2>/dev/null
 ln -sf /usr/share/pasiemepytony/main.py ../installer/usr/local/bin/kalc00lacka
 mkdir ../installer/tmp 2>/dev/null
 cp requirements.txt ../installer/tmp/requirements.txt
-chmod +x ../installer/deb/postinst
+chmod +x ../installer/DEBIAN/postinst
 dpkg-deb --build ../installer/ ../installer/kalc00lacka.deb
