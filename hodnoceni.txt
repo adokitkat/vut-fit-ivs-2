@@ -1,0 +1,4 @@
+xmlkvy00 95 (testy,profiling,inštalátor)
+xmudry01 115 (matematická knižnica,GUI)
+xpauld00 95 (bugtracking,dokumentácia)
+xkoprd00 95 (profiling,makefile)
