@@ -8,10 +8,8 @@ ZIP_FILE=xmlkvy00_xmudry01_xpauld00_xkoprd00
 
 .PHONY:
 	all
-	pip
 	init
-	packall
-	packfolder
+	pack
 	clean
 	test
 	doc
