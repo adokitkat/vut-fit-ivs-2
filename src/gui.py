@@ -388,12 +388,9 @@ class Ui_Basic(object):
             overwrite_flag = 1
 
         else:
-            print(values, number)
-            expr = self.lineEdit.text()
-            print(expr)
+            expr = ''.join(values+number)
             result = Math(expr)
             self.lineEdit.setText(str(result))
-            print(result)
 
             overwrite_flag = 1
             values = [str(result)]
@@ -980,14 +977,9 @@ class Ui_Advanced(object):
             overwrite_flag = 1
 
         else:
-            print(values, number)
-
             expr = ''.join(values+number)
-            print(expr)
-
             result = Math(expr)
             self.lineEdit.setText(str(result))
-            print(result)
 
             overwrite_flag = 1
             values = [str(result)]
