@@ -146,7 +146,7 @@ class Ui_Basic(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.lineEdit.setText("")
-        self.lineEdit.setMaxLength(50)###13)
+        self.lineEdit.setMaxLength(50)
         self.lineEdit.setCursorPosition(0)
         self.lineEdit.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lineEdit.setReadOnly(True)
@@ -1078,6 +1078,8 @@ class MainWindowBasic(QMainWindow, Ui_Basic):
             self.numbers("8")
         elif e.key() == Qt.Key_9:
             self.numbers("9")
+        elif e.key() == Qt.Key_Period:
+            self.numbers(".")
 
         elif e.key() == Qt.Key_Plus:
             self.operand("+")
@@ -1144,6 +1146,8 @@ class MainWindowAdvanced(QMainWindow, Ui_Advanced):
             self.numbers("8")
         elif e.key() == Qt.Key_9:
             self.numbers("9")
+        elif e.key() == Qt.Key_Period:
+            self.numbers(".")
 
         elif e.key() == Qt.Key_Plus:
             self.operand("+")
