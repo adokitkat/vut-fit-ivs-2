@@ -10,7 +10,8 @@ ZIP_FILE=xmlkvy00_xmudry01_xpauld00_xkoprd00
 	all
 	pip
 	init
-	pack
+	packall
+	packfolder
 	clean
 	test
 	doc
@@ -18,17 +19,24 @@ ZIP_FILE=xmlkvy00_xmudry01_xpauld00_xkoprd00
 	profile
 
 #preloží projekt a program pre profiling
-all: pip run	
-	
-pip: 
-	pip3 freeze
+all: init run	
 	
 init:
 	pip3 install -r requirements.txt
+	pip3 freeze
 
 #zabalí projekt tak, aby mohol byť odovzdaný
 pack:
-	cd ../.. && zip -r $(ZIP_FILE).zip *
+	mkdir -p ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
+	mkdir ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/installer
+	mkdir ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/doc
+
+	cp -r ../* ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
+	cp ../installer ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/installer
+	cp ../doc ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/doc
+
+	cd ../../xmlkvy00_xmudry01_xpauld00_xkoprd00
+	zip -r $(ZIP_FILE).zip *
 
 #vyčistí nepotrebné súbory
 clean:
