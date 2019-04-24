@@ -1,5 +1,4 @@
 #Pasieme pytóny Makefile
-
 MAIN=main.py
 MATH_LIB=mathematica.py
 MATH_TESTS=calc_tests.py
@@ -24,7 +23,7 @@ init:
 	pip3 freeze
 
 #zabalí projekt tak, aby mohol byť odovzdaný
-pack:
+pack: doc installer
 	mkdir -p ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
 	mkdir ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/installer
 	mkdir ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/doc
@@ -33,11 +32,15 @@ pack:
 	cp ../installer ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/installer
 	cp ../doc ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/doc
 
+	rm -rf ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo/installer
+	rm -rf ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo/doc
+
 	cd ../../xmlkvy00_xmudry01_xpauld00_xkoprd00
 	zip -r $(ZIP_FILE).zip *
 
 #vyčistí nepotrebné súbory
 clean:
+	
 
 #spustí testy pre matematickú knižnicu
 test:$(MATH_TESTS)
@@ -46,7 +49,8 @@ test:$(MATH_TESTS)
 #generovanie dokumentácie pre matematickú knižnicu
 doc: Doxyfile
 	cd .. && rm -rf doc
-	cd .. && mkdir doc && cd doc && doxygen ../src/$^
+	cd .. && mkdir doc
+	cd doc && doxygen ../src/$^
 
 #spustí program
 run:$(MAIN)
