@@ -1,0 +1,13 @@
+PasiemePytóny - xmlkvy00,xmudry01,xpauld00,xkoprd00
+
+Rozdiely medzi plánom a skutočnosťou:
+
+- Nepodarilo sa nám dodržať časový plán, oneskorili sme sa s väčšinouo častí o pár dní.
+
+- Testovanie zložitejších funkcií sme robili manuálnym hľadaním bugov a nie podľa TDD.
+
+- Rozdelenie častí vývoja projektu medzi členov nebolo implicitne dodržané. Členovia týmu pracovali čiastočne aj na úlohách, ktoré im neboli pridelené.
+
+- Niektorím časťiam projektu sme mohli venovať viac času s návrhom, namiesto plytkejšej implementácie za behu.
+
+- Mohli sme si dať väčšiu rezervu na finalizáciu projektu
