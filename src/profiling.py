@@ -4,6 +4,9 @@ from mathematica import Math
 import sys
 import cProfile
 
+### Help message
+print("Enter numbers. Ctrl+D to continue.")
+
 ### global variables ###
 x=sys.stdin.readlines()
 N=len(x)
