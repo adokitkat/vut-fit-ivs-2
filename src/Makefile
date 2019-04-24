@@ -23,14 +23,12 @@ init:
 	pip3 freeze
 
 #zabalí projekt tak, aby mohol byť odovzdaný
-pack: doc installer
+pack: installer clean
 	mkdir -p ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
-	mkdir ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/installer
-	mkdir ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/doc
 
 	cp -r ../* ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo
-	cp ../installer ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/installer
-	cp ../doc ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/doc
+	cp -r ../installer ../../xmlkvy00_xmudry01_xpauld00_xkoprd00
+	cp -r ../doc ../../xmlkvy00_xmudry01_xpauld00_xkoprd00
 
 	rm -rf ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo/installer
 	rm -rf ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/repo/doc
@@ -40,7 +38,7 @@ pack: doc installer
 
 #vyčistí nepotrebné súbory
 clean:
-	
+	rm -rf ../installer/tmp && rm -rf ../installer/usr
 
 #spustí testy pre matematickú knižnicu
 test:$(MATH_TESTS)
