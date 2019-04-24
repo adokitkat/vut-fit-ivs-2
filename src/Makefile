@@ -39,6 +39,7 @@ pack: installer clean
 #vyčistí nepotrebné súbory
 clean:
 	rm -rf ../installer/tmp && rm -rf ../installer/usr
+	rm -rf ../../xmlkvy00_xmudry01_xpauld00_xkoprd00/
 
 #spustí testy pre matematickú knižnicu
 test:$(MATH_TESTS)
@@ -48,7 +49,9 @@ test:$(MATH_TESTS)
 doc: Doxyfile
 	rm -rf ../doc
 	mkdir ../doc
-	cd ../doc && doxygen ../src/$(MATH_LIB)
+	doxygen $(MATH_LIB)
+	mv html/ ../doc
+	mv latex/ ../doc
 
 #spustí program
 run:$(MAIN)
