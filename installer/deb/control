@@ -1,0 +1,6 @@
+Package: kalc00lacka
+Version: 1.0
+Maintainer: Pasieme Pytony
+Architecture: all
+Description: KalC00Lačka by Pasieme Pytony
+Depends: python3-pip
